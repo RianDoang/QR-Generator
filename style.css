@@ -254,15 +254,15 @@ section ul li a.active {
   .logo {
     position: absolute;
     top: 50px;
-    left: 50px;
+    left: 40px;
   }
 
   #hamburger-menu {
     display: flex;
     font-size: 45px;
     position: absolute;
-    top: 42px;
-    right: 50px;
+    top: 41.8px;
+    right: 40px;
   }
 
   #DisplayClock {
