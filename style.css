@@ -245,11 +245,6 @@ section ul li a.active {
   section {
     width: 100%;
     display: flex;
-    justify-content: space-between;
-    position: absolute;
-    top: 2%;
-    left: -6%;
-    
   }
 
   section ul{
@@ -257,13 +252,17 @@ section ul li a.active {
   }
 
   .logo {
-    margin-left: -5px;
+    position: absolute;
+    top: 50px;
+    left: 50px;
   }
 
   #hamburger-menu {
     display: flex;
     font-size: 45px;
-    margin-right: -70px;
+    position: absolute;
+    top: 42px;
+    right: 50px;
   }
 
   #DisplayClock {
