@@ -26,3 +26,10 @@ function showTime(){
 }
 
 showTime();
+
+const menuToggle = document.querySelector('.bi');
+const nav = document.querySelector('section ul');
+
+menuToggle = addEventListener('click', function() {
+	nav.classList.toggle('section ul');
+});
