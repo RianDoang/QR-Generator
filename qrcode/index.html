@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="output.css">
+    <link rel="icon" href="/img/ppp.jpg">
+    <title>QR Code Maker</title>
+</head>
+<body>
+  <header>
+    <a href="../index.html" class="logo">Logo</a>
+    <!-- <div class="search-box">
+      <div class="search-icon"><i class="fa-solid fa-magnifying-glass"></i></div>
+      <div class="search-input">
+        <input type="text" class="input" placeholder="Search...">
+      </div>
+    </div> -->
+    <ul>
+      <li><a href="../index.html" class="active">Home</a></li>
+      <li><a href="" target="_blank">Home</a></li>
+      <li><a href="" target="_blank">Home</a></li>
+    </ul>
+  </header>
+
+  <div class="container">
+    <div class="colm">
+      <h2>QR Code Generator</h2>
+      <canvas id="canvas"></canvas>
+      <label>*Contoh: https://www.google.com</label>
+      <input placeholder="https://..." id="qrInput" onchange="generateQR()">
+    </div>
+  </div>
+
+  <script src="../node_modules/qrcode/build/qrcode.js"></script>
+  <script>
+    function generateQR() {
+      let canvas = document.getElementById('canvas')
+      let qrInput = document.getElementById('qrInput')
+      QRCode.toCanvas(canvas, qrInput.value, (err) => {
+        if(err) console.error(err)
+        console.log('Berhasil dibuat!')
+      })
+    }
+  </script>
+</body>
+</html>
