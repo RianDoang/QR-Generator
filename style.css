@@ -269,7 +269,7 @@ section ul li a.active {
 
   #hamburger-menu:hover {
     font-size: 50px;
-    margin-top: 1%;
+    margin-top: -0.6%;
   }
 
   #DisplayClock {
