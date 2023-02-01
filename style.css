@@ -267,7 +267,7 @@ section ul li a.active {
     right: 35px;
   }
 
-  #hamburger-menu:hover {
+  #hamburger-menu:focus {
     font-size: 50px;
     margin-top: -0.6%;
   }
