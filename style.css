@@ -100,7 +100,9 @@ section ul li a.active {
   color: white;
   border: none;
   display: none;
+  transition: 0.2s ease-in-out 0s;
 }
+
 
 .container {
   position: relative;
@@ -263,6 +265,10 @@ section ul li a.active {
     position: absolute;
     top: 41.8px;
     right: 35px;
+  }
+
+  #hamburger-menu:hover {
+    font-size: 50px;
   }
 
   #DisplayClock {
