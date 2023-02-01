@@ -269,7 +269,7 @@ section ul li a.active {
 
   #hamburger-menu:focus {
     font-size: 50px;
-    margin-top: -0.6%;
+    margin-top: -0.5%;
   }
 
   #DisplayClock {
