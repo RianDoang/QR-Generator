@@ -254,7 +254,7 @@ section ul li a.active {
   .logo {
     position: absolute;
     top: 50px;
-    left: 30px;
+    left: 35px;
   }
 
   #hamburger-menu {
@@ -262,7 +262,7 @@ section ul li a.active {
     font-size: 45px;
     position: absolute;
     top: 41.8px;
-    right: 30px;
+    right: 35px;
   }
 
   #DisplayClock {
