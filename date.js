@@ -27,9 +27,9 @@ function showTime(){
 
 showTime();
 
-const menuToggle = document.querySelector('.bi');
-const nav = document.querySelector('section ul');
+const menuToggle = document.querySelector('.menu-toggle input');
+const nav = document.querySelector('nav ul');
 
 menuToggle = addEventListener('click', function() {
-	nav.classList.toggle('section ul');
+	nav.classList.toggle('show');
 });
