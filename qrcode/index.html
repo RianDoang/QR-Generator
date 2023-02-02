@@ -31,10 +31,12 @@
 
   <div class="container">
     <div class="colm">
-      <h2>QR Code Generator</h2>
-      <canvas id="canvas"></canvas>
-      <label>*Contoh: https://www.google.com</label>
-      <input placeholder="https://..." id="qrInput" onchange="generateQR()">
+      <p>Masukan kata atau tautan</p>
+      <input type="text" placeholder="Text or URL" id="qrText">
+      <div id="imgBox">
+        <img src="" alt="" id="qrImage">
+      </div>
+      <button onclick="generateQR()">Buatkan QR Code</button>
     </div>
   </div>
 

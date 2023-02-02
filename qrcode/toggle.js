@@ -27,14 +27,30 @@ function showTime() {
 
 showTime();
 
+// function generateQR() {
+//     let canvas = document.getElementById('canvas')
+//     let qrInput = document.getElementById('qrInput')
+//     QRCode.toCanvas(canvas, qrInput.value, (err) => {
+//       if(err) console.error(err)
+//       console.log('Berhasil dibuat!')
+//     })
+//   }
+
+let imgBox = document.getElementById("imgBox");
+let qrImage = document.getElementById("qrImage");
+let qrText = document.getElementById("qrText");
+
 function generateQR() {
-    let canvas = document.getElementById('canvas')
-    let qrInput = document.getElementById('qrInput')
-    QRCode.toCanvas(canvas, qrInput.value, (err) => {
-      if(err) console.error(err)
-      console.log('Berhasil dibuat!')
-    })
+  if (qrText.value.length > 0) {
+    qrImage.src = "https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=" + qrText.value;
+    imgBox.classList.add("show-img");
+  } else {
+    qrText.classList.add("error");
+    setTimeout(() => {
+      qrText.classList.remove("error");
+    }, 1000);
   }
+}
 
 const menuToggle = document.querySelector(".menu-toggle input");
 const nav = document.querySelector("nav ul");
