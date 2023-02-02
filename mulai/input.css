@@ -19,8 +19,9 @@ body {
 .title {
     position: absolute;
     inset: 0;
-    display: grid;
-    place-items: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     background-color: #3e4452;
     opacity: 0.9;
     color: #fff;

@@ -30,7 +30,7 @@
   </nav>
 
   <div class="container">
-    <div class="colm">
+    <input class="colm">
       <h2>QR Code Generator</h2>
       <canvas id="canvas"></canvas>
       <label>*Contoh: https://www.google.com</label>
@@ -43,17 +43,9 @@
     </div>
   </div>
 
+
   <script src="../node_modules/qrcode/build/qrcode.js"></script>
-  <script>
-    function generateQR() {
-      let canvas = document.getElementById('canvas')
-      let qrInput = document.getElementById('qrInput')
-      QRCode.toCanvas(canvas, qrInput.value, (err) => {
-        if(err) console.error(err)
-        console.log('Berhasil dibuat!')
-      })
-    }
-  </script>
-  <script src="/date.js"></script>
+  
+  <script src="toggle.js"></script>
 </body>
 </html>
