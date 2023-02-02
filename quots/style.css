@@ -205,8 +205,11 @@ nav ul li a:hover {
 
 .container .quote-box button:nth-child(2) {
   background-color: transparent;
-  border: 2px solid #616161;
+  border: 1px solid rgb(23, 124, 229);
   color: #333;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 /* Mobile */
@@ -294,5 +297,17 @@ nav ul li a:hover {
 
   .container .quote-box button {
     margin-top: 20px;
+    transition: 0.2s ease-in-out 0s;
+  }
+
+  .container .quote-box button:nth-child(1):hover {
+    background: none;
+    color: black;
+  }
+
+  .container .quote-box button:nth-child(2):hover {
+    color: white;
+    background-color: rgb(23, 124, 229);
+    border: 1px solid rgb(23, 124, 229);
   }
 }
