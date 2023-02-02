@@ -10,20 +10,24 @@
     <title>QR Code Maker</title>
 </head>
 <body>
-  <header>
-    <a href="../index.html" class="logo">Logo</a>
-    <!-- <div class="search-box">
-      <div class="search-icon"><i class="fa-solid fa-magnifying-glass"></i></div>
-      <div class="search-input">
-        <input type="text" class="input" placeholder="Search...">
-      </div>
-    </div> -->
+  <nav>
+    <div class="logo">
+      <a href="#">Logo</a>
+    </div>
+
     <ul>
-      <li><a href="../index.html" class="active">Home</a></li>
-      <li><a href="" target="_blank">Home</a></li>
-      <li><a href="" target="_blank">Home</a></li>
+      <li><a href="/index.html">Home</a></li>
+      <li><a href="#">QR Code</a></li>
+      <li><a href="quots/index.html">Quote</a></li>
     </ul>
-  </header>
+
+    <div class="menu-toggle">
+      <input type="checkbox">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </nav>
 
   <div class="container">
     <div class="colm">
@@ -31,6 +35,11 @@
       <canvas id="canvas"></canvas>
       <label>*Contoh: https://www.google.com</label>
       <input placeholder="https://..." id="qrInput" onchange="generateQR()">
+    </div>
+  </div>
+
+  <div class="container">
+    <div id="DisplayClock" class="clock" onload="showTime()">
     </div>
   </div>
 
@@ -45,5 +54,6 @@
       })
     }
   </script>
+  <script src="/date.js"></script>
 </body>
 </html>
