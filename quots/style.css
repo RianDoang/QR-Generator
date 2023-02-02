@@ -1,108 +1,291 @@
-@import url('https://fonts.googleapis.com/css2?family=Itim&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Itim&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
 
 * {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-    font-family: 'Itim', sans-serif;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
 
 body {
-    background: gray;
+  font-family: "Poppins", sans-serif;
+  background: slateblue;
+  overflow: hidden;
 }
 
-.quote-box {
-    background-color: white;
-    width: 700px;
+nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 0;
+  color: white;
+}
+
+nav .logo a {
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  font-size: 33px;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+  width: 80%;
+  letter-spacing: 1px;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: white;
+  margin-left: 20px;
+  font-size: 21px;
+  padding: 10px;
+  transition: 0.2s ease-in-out 0s;
+  border-radius: 10px;
+}
+
+nav ul li a:hover {
+  background-color: white;
+  color: black;
+  border-radius: 10px;
+}
+
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  height: 20px;
+  justify-content: space-between;
+  position: relative;
+}
+
+.menu-toggle input {
+  position: absolute;
+  width: 40px;
+  height: 32px;
+  opacity: 0;
+  left: -6px;
+  top: -5px;
+  cursor: pointer;
+  z-index: 3;
+}
+
+.menu-toggle span {
+  display: block;
+  width: 28px;
+  height: 3px;
+  background-color: white;
+  border-radius: 3px;
+  transition: 0.2s ease-in-out 0s;
+}
+
+.menu-toggle span:nth-child(2) {
+  transform-origin: 0 0;
+}
+
+.menu-toggle span:nth-child(4) {
+  transform-origin: 0 100%;
+}
+
+.menu-toggle input:checked ~ span:nth-child(2) {
+  background-color: white;
+  transform: rotate(45deg) translate(-1px, -1px);
+}
+
+.menu-toggle input:checked ~ span:nth-child(4) {
+  background-color: white;
+  transform: rotate(-45deg) translate(-1px, 0);
+}
+
+.menu-toggle input:checked ~ span:nth-child(3) {
+  transform: scale(0);
+  opacity: 0;
+}
+
+.container {
+  width: 100%;
+  height: 100vh;
+}
+
+.container .quote-box {
+  font-family: "Itim", sans-serif;
+  background-color: white;
+  width: 700px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 40px;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.15);
+}
+
+.container .quote-box h2 {
+  font-size: 32px;
+  margin-bottom: 40px;
+  position: relative;
+}
+
+.container .quote-box h2::after {
+  content: "";
+  width: 75px;
+  height: 3px;
+  border-radius: 3px;
+  background: rgb(23, 124, 229);
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.container .quote-box blockquote {
+  font-size: 26px;
+  min-height: 110px;
+}
+
+.container .quote-box blockquote::before,
+.container .quote-box blockquote::after {
+  content: '"';
+}
+
+.container .quote-box span {
+  display: block;
+  margin-top: 20px;
+  float: right;
+  position: relative;
+}
+
+.container .quote-box span::before {
+  content: "";
+  width: 20px;
+  height: 2px;
+  background: rgb(23, 124, 229);
+  position: absolute;
+  top: 50%;
+  left: -30px;
+}
+
+.container .quote-box div {
+  width: 100%;
+  margin-top: 50px;
+  display: flex;
+  justify-content: center;
+}
+
+.container .quote-box button {
+  background: rgb(23, 124, 229);
+  color: white;
+  border-radius: 15px;
+  border: 1px solid rgb(23, 124, 229);
+  width: 150px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 5px;
+  cursor: pointer;
+}
+
+.container .quote-box button:hover,
+.container .quote-box button:nth-child(2):hover {
+  background-color: red;
+}
+
+.container .quote-box .fa-brands {
+  position: relative;
+  left: -15px;
+  font-size: 20px;
+  color: rgb(23, 124, 229);
+}
+
+.container .quote-box button:nth-child(2) {
+  background-color: transparent;
+  border: 2px solid #616161;
+  color: #333;
+}
+
+/* Mobile */
+@media screen and (max-width: 576px) {
+  nav ul {
     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    padding: 40px;
-    border-radius: 10px;
-    text-align: center;
-    box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.15);
-}
+    right: 30px;
+    top: 100px;
+    width: 40%;
+    height: 20vh;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: flex-end;
+    background-color: gray;
+    border-radius: 5px;
+    z-index: 13;
+    transform: scale(0);
+    transition: 0.2s all ease-in-out 0s;
+    opacity: 0;
+  }
 
-.quote-box h2 {
-    font-size: 32px;
-    margin-bottom: 40px;
-    position: relative;
-}
-
-.quote-box h2::after {
-    content: '';
-    width: 75px;
-    height: 3px;
-    border-radius: 3px;
-    background: rgb(23, 124, 229);
-    position: absolute;
-    bottom: -10px;
-    left: 50%;
-    transform: translateX(-50%);
-}
-
-.quote-box blockquote {
-    font-size: 26px;
-    min-height: 110px;
-}
-
-.quote-box blockquote::before, .quote-box blockquote::after {
-    content: '"';
-}
-
-.quote-box span {
-    display: block;
-    margin-top: 10px;
-    float: right;
-    position: relative;
-}
-
-.quote-box span::before {
-    content: '';
-    width: 20px;
-    height: 2px;
-    background: rgb(23, 124, 229);
-    position: absolute;
-    top: 50%;
-    left: -30px;
-}
-
-.quote-box div {
+  nav ul li {
     width: 100%;
-    margin-top: 50px;
+    height: 100%;
     display: flex;
+    flex-direction: column;
     justify-content: center;
-}
+    align-items: flex-end;
+    border-radius: 5px;
+  }
 
-.quote-box button {
-    background: rgb(23, 124, 229);
-    color: white;
-    border-radius: 15px;
-    border: 1px solid rgb(23, 124, 229);
-    width: 150px;
-    height: 50px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 5px;
-    cursor: pointer;
-}
-
-.quote-box button:hover,
-.quote-box button:nth-child(2):hover {
-    background-color: red;
-}
-
-.quote-box .fa-brands {
-    position: relative;
-    left: -15px;
-    font-size: 20px;
-    color: rgb(23, 124, 229);
-}
-
-.quote-box button:nth-child(2) {
+  nav ul li a {
+    padding: 0;
+    margin-right: 20px;
     background-color: transparent;
-    border: 2px solid #616161;
-    color: #333;
+  }
+
+  nav ul li:hover {
+    color: #080808;
+    background-color: #9c9c9c;
+  }
+
+  nav ul li a:hover {
+    background-color: transparent;
+  }
+
+  .menu-toggle {
+    display: flex;
+    margin-left: 50%;
+  }
+
+  nav ul.show {
+    transform: scale(100%);
+    opacity: 1;
+  }
+
+  .container .quote-box {
+    margin-top: 50px;
+    width: 90%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .container .quote-box blockquote {
+    margin-top: -20px;
+    margin-bottom: -5px;
+    height: auto;
+    font-size: 20px;
+  }
+
+  .container .quote-box span {
+    margin-bottom: -55px;
+    margin-left: 130px;
+  }
+
+  .container .quote-box button {
+    margin-top: 20px;
+  }
 }
