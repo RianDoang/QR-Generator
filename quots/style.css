@@ -174,7 +174,7 @@ nav ul li a:hover {
   width: 100%;
   margin-top: 50px;
   display: flex;
-  justify-content: center;
+  justify-content: space-evenly;
 }
 
 .container .quote-box button {
@@ -187,20 +187,13 @@ nav ul li a:hover {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 5px;
   cursor: pointer;
+  margin-top: 20px;
 }
 
 .container .quote-box button:hover,
 .container .quote-box button:nth-child(2):hover {
   background-color: red;
-}
-
-.container .quote-box .fa-brands {
-  position: relative;
-  left: -15px;
-  font-size: 20px;
-  color: rgb(23, 124, 229);
 }
 
 .container .quote-box button:nth-child(2) {
@@ -296,7 +289,7 @@ nav ul li a:hover {
   }
 
   .container .quote-box button {
-    margin-top: 20px;
+    margin: 20px 15px 0 15px;
     transition: 0.2s ease-in-out 0s;
   }
 

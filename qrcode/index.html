@@ -21,13 +21,13 @@
   <body>
     <nav>
       <div class="logo" data-aos="fade-right" data-aos-delay="100" data-aos-duration="700">
-        <a href="../index.html">Logo</a>
+        <a href="../index.html" title="Home">Logo</a>
       </div>
 
       <ul>
-        <li><a href="../index.html" data-aos="fade-down" data-aos-delay="350">Home</a></li>
-        <li><a href="#" data-aos="fade-down" data-aos-delay="700">QR Code</a></li>
-        <li><a href="../quots/index.html" data-aos="fade-down" data-aos-delay="1050">Quote</a></li>
+        <li><a href="../index.html" title="Home Page" data-aos="fade-down" data-aos-delay="350">Home</a></li>
+        <li><a href="#" title="QR Code Page" data-aos="fade-down" data-aos-delay="700">QR Code</a></li>
+        <li><a href="../quots/index.html" title="Quote Daily" data-aos="fade-down" data-aos-delay="1050">Quote</a></li>
       </ul>
 
       <div class="menu-toggle" data-aos="fade-left" data-aos-delay="500" data-aos-duration="700">
@@ -45,12 +45,12 @@
         <div id="imgBox">
           <img src="" alt="" id="qrImage" />
         </div>
-        <button onclick="generateQR()">Buatkan QR Code</button>
+        <button onclick="generateQR()" title="Button Submit">Buatkan QR Code</button>
       </div>
     </div>
 
     <div class="container">
-      <div id="DisplayClock" class="clock" onload="showTime()"></div>
+      <div id="DisplayClock" class="clock" onload="showTime()" title="Clock"></div>
     </div>
 
     <script src="../node_modules/qrcode/build/qrcode.js"></script>
