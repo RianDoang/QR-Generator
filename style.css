@@ -55,10 +55,6 @@ button > span:nth-child(3) {
   align-items: center;
 }
 
-.hidden {
-  display: none;
-}
-
 .hamburger-menu button {
   display: none;
 }
@@ -106,7 +102,8 @@ nav ul li a {
 }
 
 nav ul li a:hover {
-  background-color: gray;
+  background-color: whitesmoke;
+  color: #080808;
 }
 
 .colm-1 {
@@ -227,7 +224,7 @@ nav ul li a:hover {
   }
 
   nav ul {
-    background-color: gray;
+    background-color: #0a9cc0;
     border: 1px solid whitesmoke;
     flex-direction: column;
     position: absolute;
@@ -235,6 +232,7 @@ nav ul li a:hover {
     right: 0;
     /* padding: 10px 10px; */
     border-radius: 10px;
+    text-align: center;
   }
 
   nav ul li {
@@ -246,14 +244,16 @@ nav ul li a:hover {
 
   nav ul li a {
     background-color: transparent;
+    
   }
 
   nav ul li:hover {
-    background-color: rgb(87, 87, 87);
+    background-color: #0e7490;
   }
 
   nav ul li a:hover {
     background-color: transparent;
+    color: whitesmoke;
   }
 
   .mulai {
