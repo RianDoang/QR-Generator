@@ -106,7 +106,7 @@ nav ul li a {
 }
 
 nav ul li a:hover {
-  background-color: black;
+  background-color: gray;
 }
 
 .colm-1 {
@@ -168,7 +168,6 @@ nav ul li a:hover {
     background: transparent;
     border: none;
     z-index: 100;
-    padding: 0 8px;
   }
 
   button span {
