@@ -44,10 +44,10 @@ body {
 }
 
 button > span:nth-child(1) {
-  background-color: aqua;
+  background: linear-gradient(to right, aqua, whitesmoke);
 }
 button > span:nth-child(3) {
-  background-color: aqua;
+  background: linear-gradient(to left, aqua, whitesmoke);
 }
 
 .wadah-1 .hamburger-menu {
@@ -62,7 +62,7 @@ button > span:nth-child(3) {
 .hamburger-active > span:nth-child(1) {
   transform-origin: top left;
   rotate: 45deg;
-  background-color: white;
+  background: white;
 }
 .hamburger-active > span:nth-child(2) {
   scale: 0;
@@ -70,7 +70,7 @@ button > span:nth-child(3) {
 .hamburger-active > span:nth-child(3) {
   transform-origin: bottom left;
   rotate: -45deg;
-  background-color: white;
+  background: white;
 }
 
 nav {
