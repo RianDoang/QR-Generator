@@ -155,11 +155,47 @@ nav ul li a:hover {
   cursor: default;
 }
 
-/* Tablet */
-@media screen and (max-width: 768px) {
+/* Extra Extra Larger */
+@media screen and (max-width: 1400px) {
+  .mulai {
+    margin: 5% auto;
+  }
+
+  .mulai a {
+    font-size: 40px;
+  }
 }
 
-/* Mobile */
+/* Extra Large */
+@media screen and (max-width: 1200px) {
+  .mulai {
+    margin: 0 auto;
+  }
+}
+
+/* Large */
+@media screen and (max-width: 992px) {
+  .mulai {
+    margin: 10% auto;
+  }
+
+  .mulai a {
+    font-size: 36px;
+  }
+}
+
+/* Medium */
+@media screen and (max-width: 768px) {
+  .mulai {
+    margin: 10% auto;
+  }
+
+  .mulai a {
+    font-size: 32px;
+  }
+}
+
+/* Small */
 @media screen and (max-width: 576px) {
   .hamburger-menu button {
     display: block;
@@ -168,6 +204,7 @@ nav ul li a:hover {
     background: transparent;
     border: none;
     z-index: 100;
+    padding: 0 5px;
   }
 
   button span {
@@ -187,6 +224,7 @@ nav ul li a:hover {
 
   nav ul {
     background-color: gray;
+    border: 1px solid whitesmoke;
     flex-direction: column;
     position: absolute;
     top: 50px;
@@ -214,8 +252,12 @@ nav ul li a:hover {
     background-color: transparent;
   }
 
+  .mulai {
+    margin: 0 auto;
+  }
+
   .mulai a {
-    font-size: 30px;
+    font-size: 26px;
   }
 
   nav.show {
