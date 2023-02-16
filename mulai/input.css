@@ -17,6 +17,7 @@ body {
 }
 
 .title {
+    width: 100%;
     position: absolute;
     inset: 0;
     display: flex;
@@ -33,10 +34,10 @@ body {
     text-align: center;
 }
 
-@media screen and (max-width: 576px) {
+/* @media screen and (max-width: 576px) {
     .title {
         display: flex;
         align-items: center;
         justify-content: center;
     }
-}
+} */
