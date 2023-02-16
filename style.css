@@ -158,11 +158,11 @@ nav ul li a:hover {
 /* Extra Extra Larger */
 @media screen and (max-width: 1400px) {
   .mulai {
-    margin: 5% auto;
+    margin: 0 auto;
   }
 
   .mulai a {
-    font-size: 40px;
+    font-size: 36px;
   }
 }
 
@@ -170,6 +170,10 @@ nav ul li a:hover {
 @media screen and (max-width: 1200px) {
   .mulai {
     margin: 0 auto;
+  }
+
+  .mulai a {
+    font-size: 34px;
   }
 }
 
@@ -180,7 +184,7 @@ nav ul li a:hover {
   }
 
   .mulai a {
-    font-size: 36px;
+    font-size: 32px;
   }
 }
 
@@ -191,7 +195,7 @@ nav ul li a:hover {
   }
 
   .mulai a {
-    font-size: 32px;
+    font-size: 30px;
   }
 }
 
@@ -257,7 +261,7 @@ nav ul li a:hover {
   }
 
   .mulai a {
-    font-size: 26px;
+    font-size: 28px;
   }
 
   nav.show {
