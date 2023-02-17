@@ -19,24 +19,30 @@
     <title>QR Code Maker</title>
   </head>
   <body>
-    <nav>
-      <div class="logo" data-aos="fade-right" data-aos-delay="100" data-aos-duration="700">
-        <a href="../index.html" title="Home">Logo</a>
-      </div>
+    <header>
+      <div class="container">
+        <div class="wadah-1">
+          <div>
+            <a href="https://instagram.com/rynsyy_" class="logo">Logo</a>
+          </div>
+          <div class="hamburger-menu">
+            <button id="hamburger" name="hamburger" type="button">
+              <span></span>
+              <span></span>
+              <span></span>
+            </button>
 
-      <ul>
-        <li><a href="../index.html" title="Home Page" data-aos="fade-down" data-aos-delay="350">Home</a></li>
-        <li><a href="#" title="QR Code Page" data-aos="fade-down" data-aos-delay="700">QR Code</a></li>
-        <li><a href="../quots/index.html" title="Quote Daily" data-aos="fade-down" data-aos-delay="1050">Quote</a></li>
-      </ul>
-
-      <div class="menu-toggle" data-aos="fade-left" data-aos-delay="500" data-aos-duration="700">
-        <input type="checkbox" />
-        <span></span>
-        <span></span>
-        <span></span>
+            <nav id="nav-menu">
+              <ul>
+                <li><a href="./index.html">Home</a></li>
+                <li><a href="#">QRCode</a></li>
+                <li><a href="quots/index.html">Quots</a></li>
+              </ul>
+            </nav>
+          </div>
+        </div>
       </div>
-    </nav>
+    </header>
 
     <div class="container">
       <div class="colm">
@@ -54,9 +60,23 @@
     </div>
 
     <script src="toggle.js"></script>
-    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script>
-      AOS.init();
+      // Hamburger menu
+      const hamburger = document.querySelector("#hamburger");
+      const navMenu = document.querySelector("#nav-menu");
+
+      hamburger.addEventListener("click", function () {
+        hamburger.classList.toggle("hamburger-active");
+        navMenu.classList.toggle("show");
+      });
+
+      // Klik di luar hamburger
+      window.addEventListener("click", function (e) {
+        if (e.target != hamburger && e.target != navMenu) {
+          hamburger.classList.remove("hamburger-active");
+          navMenu.classList.remove("show");
+        }
+      });
     </script>
   </body>
 </html>
