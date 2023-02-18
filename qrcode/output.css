@@ -10,14 +10,8 @@
 
 body {
   font-family: "Poppins", sans-serif;
-  /* background-color: #379df1; */
+  background: radial-gradient(circle at top left, #00CC99, #6600FF, #00CC99);
   overflow: hidden;
-  background-image: url("/img/Background\ Quots.png");
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-attachment: fixed;
-  height: 100%;
 }
 
 .wadah-1 {
