@@ -10,7 +10,7 @@
 
 body {
   font-family: "Poppins", sans-serif;
-  background: radial-gradient(circle at top left, #00CC99, #6600FF, #00CC99);
+  background: radial-gradient(circle, #00cc99, #6600ff);
   overflow: hidden;
 }
 
@@ -101,105 +101,109 @@ nav ul li a:hover {
   align-items: center;
 }
 
-.container-1 {
-  background-color: whitesmoke;
-  border-radius: 5px;
-  padding: 30px 15px 30px 30px;
-  text-align: center;
-  display: flex;
-  width: 60%;
-  margin: 5% auto;
+.container .colm {
+  width: 400px;
+  padding: 25px 35px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: gray;
+  border-radius: 10px;
 }
 
-.setting {
-  padding-right: 15px;
-  min-width: 380px;
+.container .colm p {
+  font-weight: bold;
+  font-size: 15px;
+  margin-bottom: 8px;
 }
 
-h2 {
-  margin-bottom: 20px;
-}
-
-.input-wrap {
-  align-items: center;
-  display: flex;
-  text-align: center;
-  padding-bottom: 10px;
-}
-
-.input-1x {
+.container .colm input {
   width: 100%;
-}
-
-.input-2x {
-  width: 50%;
-}
-
-label {
-  width: 30%;
-  margin-right: 10px;
-  text-align: justify;
-}
-
-.display {
-  width: 100%;
-}
-
-textarea,
-select,
-input,
-button {
-  border: none;
-  resize: none;
-  font-family: "Poppins", sans-serif;
-  font-size: 1rem;
-}
-
-select,
-textarea {
-  border: 1px solid #e7e7e7;
-  border-radius: 5px;
-  padding: 5px;
-}
-
-input[type="range"] {
-  accent-color: gray;
-}
-
-button {
-  cursor: pointer;
-  border-radius: 5px;
-  color: #080808;
-  font-weight: 500;
-  background-color: #01e7e7;
-  transition: 0.2s ease;
-}
-
-button:hover {
-  background-color: #02c5c5;
-}
-
-.btn-download {
+  height: 50px;
+  border: 1px solid #494eea;
+  outline: 0;
   padding: 10px;
-  cursor: pointer;
+  margin: 10px 0 20px;
+  border-radius: 5px;
+}
+
+.container .colm button {
   width: 100%;
-}
-
-#data {
-  border: 1px solid #5a5a5a;
-}
-
-.material-symbols-outlined {
-  color: #080808;
+  height: 50px;
+  background: #494eea;
+  color: #fff;
+  border: 0;
+  outline: 0;
+  border-radius: 5px;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  margin-top: 20px;
+  font-weight: 500;
   transition: 0.2s ease;
 }
 
-.material-symbols-outlined:hover {
-  color: #797979;
+#imgBox {
+  width: 200px;
+  border-radius: 5px;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 1s;
 }
 
-#clear {
-  padding: 5px 7px;
+#imgBox img {
+  width: 100%;
+  padding: 10px;
+}
+
+#imgBox.show-img {
+  max-height: 300px;
+  margin: 10px auto;
+  border: 1px solid #d1d1d1;
+}
+
+.error {
+  animation: shake 0.1s linear 10;
+}
+
+@keyframes shake {
+  0% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-2px);
+  }
+  50% {
+    transform: translateX(0);
+  }
+  75% {
+    transform: translateX(2px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.btn {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+}
+
+.colm button:hover {
+  background: #3b40bb;
+}
+
+#btn-download {
+  display: none;
+}
+
+.show-btn {
+  display: block;
+}
+
+#btn-download.show-btn {
+  display: block;
 }
 
 #DisplayClock {
@@ -298,7 +302,7 @@ button:hover {
 
   .container .colm {
     z-index: -100;
-    width: 70%;
+    width: 80%;
   }
 
   #DisplayClock {

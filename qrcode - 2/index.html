@@ -12,19 +12,18 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
-    <!-- Bootstrap Icon -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css" integrity="sha384-b6lVK+yci+bfDmaY1u0zE8YYJt0TZxLEAFyYSLHId4xoVvsrQu3INevFKo+Xir8e" crossorigin="anonymous" />
-
-    <link rel="stylesheet" href="style.css" />
-    <link rel="icon" href="img/ppp.jpg" />
-    <title>Home Page</title>
+    <!-- AOS -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="stylesheet" href="output.css" />
+    <link rel="icon" href="/img/ppp.jpg" />
+    <title>QR Code Maker</title>
   </head>
   <body>
     <header>
       <div class="container">
         <div class="wadah-1">
           <div>
-            <a href="" class="logo">Logo</a>
+            <a href="https://instagram.com/rynsyy_" class="logo">Logo</a>
           </div>
           <div class="hamburger-menu">
             <button id="hamburger" name="hamburger" type="button">
@@ -35,9 +34,9 @@
 
             <nav id="nav-menu">
               <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="qrcode - 2/index.html">QRCode</a></li>
-                <li><a href="quots/index.html">Quots</a></li>
+                <li><a href="/index.html">Home</a></li>
+                <li><a href="#">QRCode</a></li>
+                <li><a href="/quots/index.html">Quots</a></li>
               </ul>
             </nav>
           </div>
@@ -46,15 +45,24 @@
     </header>
 
     <div class="container">
-      <div class="colm-1">
-        <div class="mulai">
-          <a href="mulai/index.html">Mulai</a>
+      <div class="colm">
+        <p>Masukan kata atau tautan</p>
+        <input type="text" placeholder="Text or URL" id="qrText" />
+        <div id="imgBox">
+          <img src="" alt="" id="qrImage" />
         </div>
-        <div id="DisplayClock"></div>
+        <div class="btn">
+          <button onclick="generateQR()" title="Button Submit" id="generated">Buatkan QR Code</button>
+          <button id="btn-download" onclick="saveBtn()" type="button">Simpan Gambar</button>
+        </div>
       </div>
     </div>
 
-    <script src="date.js"></script>
+    <div class="container">
+      <div id="DisplayClock" class="clock" onload="showTime()" title="Clock"></div>
+    </div>
+
+    <script src="toggle.js"></script>
     <script>
       // Hamburger menu
       const hamburger = document.querySelector("#hamburger");
