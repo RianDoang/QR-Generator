@@ -66,6 +66,8 @@ const qr = document.querySelector("#qrImage");
 const imgBox = document.querySelector("#imgBox");
 const qrText = document.querySelector("#qrText");
 const btnDl = document.querySelector("#btn-download");
+const generated = document.querySelector("#generated");
+const silang = document.querySelector(".silang");
 
 function generateQR() {
   if (qrText.value.length > 0) {
@@ -74,20 +76,28 @@ function generateQR() {
     btnDl.classList.add("show-btn");
   } else {
     qrText.classList.add("error");
+    silang.classList.add("error");
+    imgBox.classList.remove("show-img");
+    btnDl.classList.remove("show-btn");
     setTimeout(() => {
       qrText.classList.remove("error");
+      silang.classList.remove("error");
     }, 1000);
   }
 }
 
-// const createSaveBtn = (saveUrl) => {
-//   const link = document.createElement("a");
-//   link.id = "save-link";
-//   link.classList = "cs";
-//   link.href = saveUrl;
-//   link.download = "qrcode";
-//   link.innerHTML = "Save Image";
-//   document.getElementById("generated").appendChild(link);
-// };
+function eraseText() {
+  document.getElementById("qrText").value = "";
+}
 
-// form.addEventListener("submit", generateQR);
+function saveBtn() {
+  var content = "Tulung bang, cara buat code file dowload pake method fetch di filesaver.js gimana yaa??? :(";
+  // any kind of extension (.txt,.cpp,.cs,.bat)
+  var filename = "help.txt";
+
+  var blob = new Blob([content], {
+    type: "text/plain;charset=utf-8",
+  });
+
+  saveAs(blob, filename);
+}

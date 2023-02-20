@@ -12,8 +12,10 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
-    <!-- AOS -->
-    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+    <!-- File Saver Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js" referrerpolicy="no-referrer"></script>
+
     <link rel="stylesheet" href="output.css" />
     <link rel="icon" href="/img/ppp.jpg" />
     <title>QR Code Maker</title>
@@ -34,9 +36,9 @@
 
             <nav id="nav-menu">
               <ul>
-                <li><a href="/index.html">Home</a></li>
+                <li><a href="../index.html">Home</a></li>
                 <li><a href="#">QRCode</a></li>
-                <li><a href="/quots/index.html">Quots</a></li>
+                <li><a href="../quots/index.html">Quots</a></li>
               </ul>
             </nav>
           </div>
@@ -46,10 +48,11 @@
 
     <div class="container">
       <div class="colm">
-        <p>Masukan kata atau tautan</p>
+        <p>Masukan Teks atau URL</p>
         <input type="text" placeholder="Text or URL" id="qrText" />
+        <a class="silang" onclick="eraseText()"><i class="fa-solid fa-x"></i></a>
         <div id="imgBox">
-          <img src="" alt="" id="qrImage" />
+          <img src="" alt="qrcode" id="qrImage" />
         </div>
         <div class="btn">
           <button onclick="generateQR()" title="Button Submit" id="generated">Buatkan QR Code</button>
@@ -63,6 +66,7 @@
     </div>
 
     <script src="toggle.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/davidshimjs-qrcodejs@0.0.2/qrcode.min.js"></script>
     <script>
       // Hamburger menu
       const hamburger = document.querySelector("#hamburger");

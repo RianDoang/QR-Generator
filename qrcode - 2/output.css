@@ -10,8 +10,14 @@
 
 body {
   font-family: "Poppins", sans-serif;
-  background: radial-gradient(circle, #00cc99, #6600ff);
+  /* background: radial-gradient(circle, #00cc99, #6600ff); */
   overflow: hidden;
+  background-image: url("../img/Background\ QRCode.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+  height: 100%;
 }
 
 .wadah-1 {
@@ -126,6 +132,8 @@ nav ul li a:hover {
   padding: 10px;
   margin: 10px 0 20px;
   border-radius: 5px;
+  letter-spacing: 1px;
+  font-family: 'Poppins', sans-serif;
 }
 
 .container .colm button {
@@ -200,6 +208,26 @@ nav ul li a:hover {
 
 .show-btn {
   display: block;
+}
+
+.silang {
+  position: absolute;
+  top: 69px;
+  right: 38px;
+  width: 44px;
+  height: 44px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  border-radius: 50%;
+  transition: 0.2s ease;
+  opacity: 80%;
+}
+
+.silang:hover {
+  background-color: #c4c4c4;
+  border-radius: 50%;
 }
 
 #btn-download.show-btn {
