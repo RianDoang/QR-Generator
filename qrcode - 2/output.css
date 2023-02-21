@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
-@import url('https://fonts.googleapis.com/css2?family=Signika+Negative:wght@500&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Signika+Negative:wght@500&display=swap");
 
 * {
   padding: 0;
@@ -165,7 +165,7 @@ form button {
   border: none;
   transition: 0.2s ease;
   font-size: 17px;
-  font-family: 'Signika Negative', sans-serif;
+  font-family: "Signika Negative", sans-serif;
 }
 
 form button:hover {
@@ -195,7 +195,7 @@ form button:hover {
   text-decoration: none;
   justify-content: center;
   margin-bottom: 15px;
-  font-family: 'Signika Negative', sans-serif;
+  font-family: "Signika Negative", sans-serif;
   transition: 0.2s ease;
 }
 
@@ -335,21 +335,16 @@ form button:hover {
     color: whitesmoke;
   }
 
-  .mulai {
-    margin: 0 auto;
-  }
-
-  .mulai a {
-    font-size: 28px;
-  }
-
   nav.show {
     display: flex;
   }
 
-  .container .colm {
-    z-index: -100;
-    width: 80%;
+  .container1 .wadah-1 {
+    width: 88%;
+  }
+
+  .silang {
+    right: 37px;
   }
 
   #DisplayClock {
