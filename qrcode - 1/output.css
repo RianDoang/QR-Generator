@@ -11,7 +11,7 @@
 body {
   font-family: "Poppins", sans-serif;
   background: radial-gradient(circle at top left, #00cc99, #6600ff, #00cc99);
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 .wadah-1 {
@@ -102,7 +102,8 @@ nav ul li a:hover {
 }
 
 .container-1 {
-  background-color: whitesmoke;
+  background-color: #272727;
+  color: #dfcdc3;
   border-radius: 5px;
   padding: 30px 15px 30px 30px;
   text-align: center;
@@ -157,9 +158,10 @@ button {
 
 select,
 textarea {
-  border: 1px solid #e7e7e7;
+  border: 1px solid aqua;
   border-radius: 5px;
   padding: 5px;
+  outline: none;
 }
 
 input[type="range"] {
@@ -171,12 +173,12 @@ button {
   border-radius: 5px;
   color: #080808;
   font-weight: 500;
-  background-color: #01e7e7;
+  background-color: #4fcca3;
   transition: 0.2s ease;
 }
 
 button:hover {
-  background-color: #02c5c5;
+  background-color: #3e9e7e;
 }
 
 .btn-download {
@@ -190,7 +192,7 @@ button:hover {
 }
 
 .material-symbols-outlined {
-  color: #080808;
+  color: #dfcdc3;
   transition: 0.2s ease;
 }
 
@@ -200,6 +202,13 @@ button:hover {
 
 #clear {
   padding: 5px 7px;
+}
+
+#canvas {
+  border: 1px solid #dfcdc3;
+  margin: 0 auto;
+  width: fit-content;
+  padding: 15px 15px 25px 15px;
 }
 
 #DisplayClock {
@@ -284,14 +293,42 @@ button:hover {
     color: whitesmoke;
   }
 
-  .setting {
+  nav.show {
+    display: flex;
+  }
+
+  .container-1 {
+    width: 85%;
+    max-height: 1000px;
     display: flex;
     flex-direction: column;
-    width: 100%;
-    justify-content: space-between;
+  }
+
+  .setting {
+    min-width: 100px;
+  }
+
+  .setting h2 {
+    display: flex;
+    align-items: flex-start;
+    letter-spacing: 1px;
+  }
+
+  .display {
+    
+    margin: 20px 0 0 -5px;
+  }
+
+  .display #canvas {
+    margin-bottom: 10px;
+  }
+
+  .display p {
+    margin-bottom: 10px;
   }
 
   #DisplayClock {
-    left: 50px;
+    left: 60px;
+    margin-top: 400px;
   }
 }
