@@ -102,7 +102,7 @@ const createSaveBtn = (saveUrl) => {
   link.href = saveUrl;
   link.download = "QRCode Kamu";
   link.innerHTML = "Simpan QR Code";
-  document.getElementById("generated").appendChild(link);
+  document.getElementById("qrcode").appendChild(link);
 };
 
 hideSpinner();
