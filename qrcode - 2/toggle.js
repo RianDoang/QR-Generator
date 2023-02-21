@@ -27,77 +27,89 @@ function showTime() {
 
 showTime();
 
-// let imgBox = document.getElementById("imgBox");
-// let qrImage = document.getElementById("qrImage");
-// let qrText = document.getElementById("qrText");
-// let btnDl = document.querySelector("#btn-download");
+const form = document.getElementById("generate-form");
+const qr = document.getElementById("qrcode");
+const generate = document.getElementById("qrcode");
 
-// function generateQR() {
-//   if (qrText.value.length > 0) {
-//     qrImage.src = "https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=" + qrText.value;
-//     imgBox.classList.add("show-img");
-//     btnDl.classList.add("show-btn");
-//   } else {
-//     qrText.classList.add("error");
-//     setTimeout(() => {
-//       qrText.classList.remove("error");
-//     }, 1000);
-//   }
-// }
+// Button submit
+const onGenerateSubmit = (e) => {
+  e.preventDefault();
 
-// btnDl.addEventListener("click", (e) => {
-//   qrImage.download({ name: "QR Code kamu", extenstion: "png" });
-// });
+  clearUI();
 
-// function saveBtn() {
-//   qrCode = new QRCodeStyling(op);
-//   let canvasEl = document.querySelector("#qrImage");
-//   canvasEl.innerHTML = "";
-//   qrCode.append(canvasEl);
-//   canvasEl.nextElementSibling.innerHTML = `${op.width}px x ${op.height}px`;
-// }
+  const url = document.getElementById("url").value;
+  // const size = document.getElementById("size").value;
 
-// btnDl.addEventListener("click", (e) => {
-//   qrImage.download({ name: "QR Code kamu", extenstion: "png" });
-// });
-
-const form = document.querySelector(".colm");
-const qr = document.querySelector("#qrImage");
-const imgBox = document.querySelector("#imgBox");
-const qrText = document.querySelector("#qrText");
-const btnDl = document.querySelector("#btn-download");
-const generated = document.querySelector("#generated");
-const silang = document.querySelector(".silang");
-
-function generateQR() {
-  if (qrText.value.length > 0) {
-    qrImage.src = "https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=" + qrText.value;
-    imgBox.classList.add("show-img");
-    btnDl.classList.add("show-btn");
+  // Validate url
+  if (url === "") {
+    alert("Masukan Teks atau URL di kolum putih");
+    generate.classList.remove("borders");
   } else {
-    qrText.classList.add("error");
-    silang.classList.add("error");
-    imgBox.classList.remove("show-img");
-    btnDl.classList.remove("show-btn");
+    showSpinner();
+    generate.classList.remove("borders");
     setTimeout(() => {
-      qrText.classList.remove("error");
-      silang.classList.remove("error");
+      hideSpinner();
+      generateQRCode(url);
+      
+      // Generate the save button after the qr code image src is ready
+      setTimeout(() => {
+        // generate.classList.add("borders");
+        // Get save url
+        const saveUrl = qr.querySelector("img").src;
+        // Create save button
+        createSaveBtn(saveUrl);
+        generate.classList.add("borders");
+      }, 50);
     }, 1000);
   }
-}
+};
+
+// Generate QR code
+const generateQRCode = (url) => {
+  const qrcode = new QRCode("qrcode", {
+    text: url,
+    width: 180,
+    height: 180,
+  });
+};
+
+// Clear QR code and save button
+const clearUI = () => {
+  qr.innerHTML = "";
+  const saveBtn = document.getElementById("save-link");
+  if (saveBtn) {
+    saveBtn.remove();
+  }
+};
+
+// Show spinner
+const showSpinner = () => {
+  const spinner = document.getElementById("spinner");
+  spinner.style.display = "block";
+};
+
+// Hide spinner
+const hideSpinner = () => {
+  const spinner = document.getElementById("spinner");
+  spinner.style.display = "none";
+};
+
+// Create save button to download QR code as image
+const createSaveBtn = (saveUrl) => {
+  const link = document.createElement("a");
+  link.id = "save-link";
+  link.classList = "btn-download";
+  link.href = saveUrl;
+  link.download = "QRCode Kamu";
+  link.innerHTML = "Simpan QR Code";
+  document.getElementById("generated").appendChild(link);
+};
+
+hideSpinner();
+
+form.addEventListener("submit", onGenerateSubmit);
 
 function eraseText() {
-  document.getElementById("qrText").value = "";
-}
-
-function saveBtn() {
-  var content = "Tulung bang, cara buat code file dowload pake method fetch di filesaver.js gimana yaa??? :(";
-  // any kind of extension (.txt,.cpp,.cs,.bat)
-  var filename = "help.txt";
-
-  var blob = new Blob([content], {
-    type: "text/plain;charset=utf-8",
-  });
-
-  saveAs(blob, filename);
+  document.getElementById("url").value = "";
+  // alert("Berhasil dihapus");
 }
