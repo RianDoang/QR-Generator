@@ -9,111 +9,112 @@
 
 body {
   font-family: "Poppins", sans-serif;
-  background: slateblue;
+  /* background-color: #379df1; */
   overflow: hidden;
+  background-image: url("../img/Background\ Quots.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+  height: 100%;
+}
+
+.container {
+  padding: 16px;
+  justify-content: center;
+  align-items: center;
+}
+
+.wadah-1 {
+  display: flex;
+  width: 93%;
+  margin: 15px auto auto auto;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+}
+
+.wadah-1 .logo {
+  color: white;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-size: 30px;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+
+button > span:nth-child(1) {
+  background: #79df5a;
+}
+button > span:nth-child(3) {
+  background: #79df5a;
+}
+
+.wadah-1 .hamburger-menu {
+  display: flex;
+  align-items: center;
+}
+
+.hamburger-menu button {
+  display: none;
+}
+
+.hamburger-active > span:nth-child(1) {
+  transform-origin: top left;
+  rotate: 45deg;
+  background: white;
+}
+.hamburger-active > span:nth-child(2) {
+  scale: 0;
+}
+.hamburger-active > span:nth-child(3) {
+  transform-origin: bottom left;
+  rotate: -45deg;
+  background: white;
 }
 
 nav {
   display: flex;
-  justify-content: center;
   align-items: center;
-  padding: 40px 0;
-  color: white;
-}
-
-nav .logo a {
-  letter-spacing: 3px;
-  text-transform: uppercase;
-  font-size: 33px;
-  color: white;
-  text-decoration: none;
-  font-weight: bold;
 }
 
 nav ul {
   display: flex;
+}
+
+nav ul li {
   list-style: none;
-  width: 80%;
-  letter-spacing: 1px;
-  justify-content: flex-end;
+  font-size: 21px;
   align-items: center;
+  font-weight: 500;
+  margin-left: 10px;
 }
 
 nav ul li a {
+  justify-content: space-between;
   text-decoration: none;
+  letter-spacing: 2px;
   color: white;
-  margin-left: 20px;
-  font-size: 21px;
-  padding: 10px;
-  transition: 0.2s ease-in-out 0s;
+  background-color: transparent;
+  padding: 7px 12px;
   border-radius: 10px;
+  transition: 0.2s all ease-in-out 0s;
 }
 
 nav ul li a:hover {
-  background-color: white;
-  color: black;
-  border-radius: 10px;
+  background-color: whitesmoke;
+  color: #080808;
 }
 
-.menu-toggle {
-  display: none;
-  flex-direction: column;
-  height: 20px;
-  justify-content: space-between;
-  position: relative;
-}
-
-.menu-toggle input {
-  position: absolute;
-  width: 40px;
-  height: 32px;
-  opacity: 0;
-  left: -6px;
-  top: -5px;
-  cursor: pointer;
-  z-index: 3;
-}
-
-.menu-toggle span {
-  display: block;
-  width: 28px;
-  height: 3px;
-  background-color: white;
-  border-radius: 3px;
-  transition: 0.2s ease-in-out 0s;
-}
-
-.menu-toggle span:nth-child(2) {
-  transform-origin: 0 0;
-}
-
-.menu-toggle span:nth-child(4) {
-  transform-origin: 0 100%;
-}
-
-.menu-toggle input:checked ~ span:nth-child(2) {
-  background-color: white;
-  transform: rotate(45deg) translate(-1px, -1px);
-}
-
-.menu-toggle input:checked ~ span:nth-child(4) {
-  background-color: white;
-  transform: rotate(-45deg) translate(-1px, 0);
-}
-
-.menu-toggle input:checked ~ span:nth-child(3) {
-  transform: scale(0);
-  opacity: 0;
-}
-
-.container {
+.container1 {
   width: 100%;
   height: 100vh;
 }
 
-.container .quote-box {
+.container1 .quote-box {
   font-family: "Itim", sans-serif;
-  background-color: white;
+  background-color: #c4e6d8;
   width: 700px;
   position: absolute;
   top: 50%;
@@ -125,63 +126,63 @@ nav ul li a:hover {
   box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.15);
 }
 
-.container .quote-box h2 {
+.container1 .quote-box h2 {
   font-size: 32px;
   margin-bottom: 40px;
   position: relative;
 }
 
-.container .quote-box h2::after {
+.container1 .quote-box h2::after {
   content: "";
   width: 75px;
   height: 3px;
   border-radius: 3px;
-  background: rgb(23, 124, 229);
+  background: #47b892;
   position: absolute;
   bottom: -10px;
   left: 50%;
   transform: translateX(-50%);
 }
 
-.container .quote-box blockquote {
+.container1 .quote-box blockquote {
   font-size: 26px;
   min-height: 110px;
 }
 
-.container .quote-box blockquote::before,
-.container .quote-box blockquote::after {
+.container1 .quote-box blockquote::before,
+.container1 .quote-box blockquote::after {
   content: '"';
 }
 
-.container .quote-box span {
+.container1 .quote-box span {
   display: block;
   margin-top: 20px;
   float: right;
   position: relative;
 }
 
-.container .quote-box span::before {
+.container1 .quote-box span::before {
   content: "";
   width: 20px;
   height: 2px;
-  background: rgb(23, 124, 229);
+  background: #47b892;
   position: absolute;
   top: 50%;
   left: -30px;
 }
 
-.container .quote-box div {
+.container1 .quote-box div {
   width: 100%;
   margin-top: 50px;
   display: flex;
   justify-content: space-evenly;
 }
 
-.container .quote-box button {
-  background: rgb(23, 124, 229);
+.container1 .quote-box button {
+  background: #486b00;
   color: white;
   border-radius: 15px;
-  border: 1px solid rgb(23, 124, 229);
+  border: 1px solid #486b00;
   width: 150px;
   height: 50px;
   display: flex;
@@ -189,84 +190,104 @@ nav ul li a:hover {
   justify-content: center;
   cursor: pointer;
   margin-top: 20px;
+  transition: 0.2s ease;
 }
 
-.container .quote-box button:hover,
-.container .quote-box button:nth-child(2):hover {
-  background-color: red;
-}
-
-.container .quote-box button:nth-child(2) {
-  background-color: transparent;
-  border: 1px solid rgb(23, 124, 229);
+.container1 .quote-box button:nth-child(2) {
+  background-color: #476b004b;
+  border: 1px solid #486b00;
   color: #333;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
+.container1 .quote-box button:nth-child(1):hover {
+  background: #476b004b;
+  color: black;
+}
+
+.container1 .quote-box button:nth-child(2):hover {
+  color: white;
+  background-color: #486b00;
+  border: 1px solid #486b00;
+}
+
 /* Mobile */
 @media screen and (max-width: 576px) {
-  nav ul {
+  .hamburger-menu button {
+    display: block;
     position: absolute;
-    right: 30px;
-    top: 100px;
-    width: auto;
-    height: 20vh;
+    right: 5px;
+    background: transparent;
+    border: none;
+    z-index: 100;
+    padding: 0 5px;
+  }
+
+  button span {
+    display: block;
+    width: 32px;
+    height: 3px;
+    background-color: white;
+    margin-bottom: 8px;
+    margin-top: 8px;
+    border-radius: 3px;
+    transition: 0.2s ease-in-out 0s;
+  }
+
+  nav {
+    display: none;
+  }
+
+  nav ul {
+    background-color: #47b892;
+    border: 1px solid whitesmoke;
     flex-direction: column;
-    justify-content: space-evenly;
-    align-items: flex-end;
-    background: none;
-    border-radius: 5px;
-    z-index: 13;
-    transform: scale(0);
-    transition: 0.2s all ease-in-out 0s;
-    opacity: 0;
+    position: absolute;
+    top: 50px;
+    right: 0;
+    /* padding: 10px 10px; */
+    border-radius: 10px;
+    text-align: center;
+    animation: effect 0.3s ease;
+  }
+
+  @keyframes effect {
+    0% {
+      transform: translateY(-10px);
+      opacity: 0;
+    }
+
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
   }
 
   nav ul li {
-    width: 70%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    margin: 5px 5px;
+    padding: 10px 10px;
     border-radius: 5px;
-    background: gray;
-    margin-bottom: 5px;
   }
 
   nav ul li a {
-    padding: 0;
-    margin-right: 20px;
-    padding: 0 40px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    background-color: transparent;
   }
 
   nav ul li:hover {
-    color: #080808;
-    background-color: #9c9c9c;
-    border: 1px solid white;
+    background-color: #3c9678;
   }
 
   nav ul li a:hover {
     background-color: transparent;
+    color: whitesmoke;
   }
-
-  .menu-toggle {
+  nav.show {
     display: flex;
-    margin-left: 50%;
   }
 
-  nav ul.show {
-    transform: scaleX(100%);
-    transform-origin: 100% 0;
-    opacity: 1;
-  }
-
-  .container .quote-box {
+  .container1 .quote-box {
     margin-top: 50px;
     width: 90%;
     height: auto;
@@ -276,31 +297,20 @@ nav ul li a:hover {
     align-items: center;
   }
 
-  .container .quote-box blockquote {
+  .container1 .quote-box blockquote {
     margin-top: -20px;
     margin-bottom: -5px;
     height: auto;
     font-size: 20px;
   }
 
-  .container .quote-box span {
+  .container1 .quote-box span {
     margin-bottom: -55px;
     margin-left: 130px;
   }
 
-  .container .quote-box button {
+  .container1 .quote-box button {
     margin: 20px 15px 0 15px;
     transition: 0.2s ease-in-out 0s;
-  }
-
-  .container .quote-box button:nth-child(1):hover {
-    background: none;
-    color: black;
-  }
-
-  .container .quote-box button:nth-child(2):hover {
-    color: white;
-    background-color: rgb(23, 124, 229);
-    border: 1px solid rgb(23, 124, 229);
   }
 }
