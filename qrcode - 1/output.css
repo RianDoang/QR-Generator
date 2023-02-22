@@ -10,8 +10,13 @@
 
 body {
   font-family: "Poppins", sans-serif;
-  background: radial-gradient(circle at top left, #00cc99, #6600ff, #00cc99);
+  background-image: url("../img/Background\ QRCode.png");
   overflow-x: hidden;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+  height: 100%;
 }
 
 .wadah-1 {
@@ -328,7 +333,9 @@ button:hover {
   }
 
   #DisplayClock {
-    left: 60px;
-    margin-top: 400px;
+    position: relative;
+    display: flex;
+    margin-left: -60px;
+    margin-top: 40px;
   }
 }
