@@ -115,6 +115,7 @@ nav ul li a:hover {
   display: flex;
   width: 60%;
   margin: 5% auto;
+  box-shadow: 0 15px 20px 0 rgba(0, 0, 0, 0.15);
 }
 
 .setting {
