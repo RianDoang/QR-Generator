@@ -1,112 +1,250 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
 @import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
 
 * {
   padding: 0;
   margin: 0;
   scroll-behavior: smooth;
-  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
 }
 
 body {
-  font-family: "Poppins", sans-serif;
   background-image: url("../img/Background\ QRCode.png");
   overflow-x: hidden;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
   background-attachment: fixed;
-  height: 100%;
-}
-
-.wadah-1 {
-  display: flex;
-  width: 93%;
-  margin: 15px auto auto auto;
-  justify-content: space-between;
-  align-items: center;
-  position: relative;
-}
-
-.wadah-1 .logo {
-  color: white;
-  text-transform: uppercase;
-  text-decoration: none;
-  font-size: 30px;
-  font-weight: bold;
-  letter-spacing: 2px;
-}
-
-button > span:nth-child(1) {
-  background: aqua;
-}
-button > span:nth-child(3) {
-  background: aqua;
-}
-
-.wadah-1 .hamburger-menu {
-  display: flex;
-  align-items: center;
-}
-
-.hamburger-menu button {
-  display: none;
-}
-
-.hamburger-active > span:nth-child(1) {
-  transform-origin: top left;
-  rotate: 45deg;
-  background: white;
-}
-.hamburger-active > span:nth-child(2) {
-  scale: 0;
-}
-.hamburger-active > span:nth-child(3) {
-  transform-origin: bottom left;
-  rotate: -45deg;
-  background: white;
+  height: 100vh;
 }
 
 nav {
   display: flex;
   align-items: center;
+  justify-content: space-between;
+  padding: 20px 50px;
+}
+
+nav .logo a {
+  text-decoration: none;
+  color: whitesmoke;
+  font-weight: 600;
+  font-size: 25px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.hamburger-menu {
+  display: none;
 }
 
 nav ul {
-  display: flex;
-}
-
-nav ul li {
   list-style: none;
-  font-size: 21px;
-  align-items: center;
-  font-weight: 500;
-  margin-left: 10px;
+  display: flex;
+  gap: 10px;
+  transition: 0.2s linear;
+  transition-delay: .1s;
 }
 
 nav ul li a {
-  justify-content: space-between;
   text-decoration: none;
-  letter-spacing: 2px;
-  color: white;
-  background-color: transparent;
-  padding: 7px 12px;
-  border-radius: 10px;
-  transition: 0.2s all ease-in-out 0s;
-}
-
-nav ul li a:hover {
-  background-color: whitesmoke;
-  color: #080808;
-}
-
-.container {
-  padding: 16px;
-  justify-content: center;
+  padding: 5px 15px;
+  font-size: 18px;
+  color: whitesmoke;
+  display: flex;
+  flex-direction: column;
   align-items: center;
+  justify-content: center;
 }
 
-.container-1 {
+nav ul li a::after {
+  content: "";
+  display: block;
+  border-bottom: 1px solid #010101;
+  width: 100%;
+  transition: 0.2s linear;
+  transform: scaleX(0);
+}
+
+nav ul li a:hover::after {
+  transform: scaleX(1);
+}
+
+section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+section .container {
+  background-color: #1e293b;
+  width: 80%;
+  max-height: 20000px;
+  border-radius: 6px;
+  margin-bottom: 50px;
+}
+
+.container h2 {
+  text-align: center;
+  color: whitesmoke;
+  margin: 25px auto 15px auto;
+}
+
+.container .tabelQR {
+  width: 100%;
+  display: flex;
+}
+
+.tabelQR .qrSide {
+  width: 100%;
+  padding: 10px 20px 10px 40px;
+}
+
+.qrSide div {
+  display: flex;
+  align-items: center;
+  margin: 20px auto;
+}
+
+.qrSide div label {
+  width: 100px;
+  margin-right: 30px;
+  text-align: justify;
+  color: whitesmoke;
+  font-weight: 600;
+  font-size: 17px;
+}
+
+.qrSide div textarea {
+  width: 100%;
+  height: 70px;
+  outline: none;
+  border-radius: 5px;
+  padding: 5px;
+  border: none;
+  resize: none;
+  font-family: "Poppins", sans-serif;
+  font-size: 1rem;
+}
+
+.qrSide div input {
+  width: 100%;
+  cursor: pointer;
+}
+
+.qrSide div .buttonFile {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.buttonFile a {
+  color: white;
+  padding: 10px 10px 4px 10px;
+}
+
+.buttonFile button {
+  background-color: whitesmoke;
+  border: none;
+  border-radius: 8px;
+  font-size: 15px;
+  font-weight: 600;
+  padding: 8px 16px;
+  cursor: pointer;
+  transition: 0.1s ;
+}
+
+.buttonFile button:hover {
+  background-color: rgb(189, 189, 189);
+}
+
+.buttonFile a svg {
+  width: 25px;
+  height: 25px;
+}
+
+.qrSide div select {
+  border: none;
+  outline: none;
+  width: 100%;
+  height: 30px;
+  border-radius: 3px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.qrSide div select option {
+  font-weight: 600;
+}
+
+.qrSide div #dot-color-1 {
+  width: 50%;
+}
+
+.qrSide div #dot-color-2 {
+  width: 50%;
+}
+
+.qrSide div #bg-color {
+  width: 100%;
+}
+
+.container .qrResult {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+
+.qrResult .qrLoad {
+  width: 80%;
+  color: whitesmoke;
+}
+
+.qrLoad #canvas {
+  border: 1px solid #dfcdc3;
+  margin: 10px auto;
+  width: fit-content;
+  padding: 15px 15px 25px 15px;
+  border-radius: 2px;
+}
+
+.qrLoad button {
+  margin-top: 10px;
+  background-color: whitesmoke;
+  border: none;
+  outline: none;
+  font-size: 15px;
+  padding: 6px 14px;
+  border-radius: 7px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.qrLoad button:hover {
+  background-color: rgb(172, 172, 172);
+}
+
+#margin.white {
+  background-color: whitesmoke;
+}
+
+#margin.gray {
+  background-color: gray;
+}
+
+#margin,
+#size {
+  cursor: pointer;
+}
+
+#margin.cursorNone {
+  cursor: not-allowed;
+}
+
+/* .container-1 {
   background-color: #272727;
   color: #dfcdc3;
   border-radius: 5px;
@@ -138,6 +276,7 @@ h2 {
 
 .input-1x {
   width: 100%;
+  cursor: pointer;
 }
 
 .input-2x {
@@ -219,6 +358,10 @@ button:hover {
   padding: 15px 15px 25px 15px;
 }
 
+#margin.cursorNone {
+  cursor: not-allowed;
+} */
+
 #DisplayClock {
   color: white;
   position: absolute;
@@ -232,113 +375,120 @@ button:hover {
 
 /* Small */
 @media screen and (max-width: 576px) {
-  .hamburger-menu button {
-    display: block;
-    position: absolute;
-    right: 5px;
-    background: transparent;
-    border: none;
-    z-index: 100;
-    padding: 0 5px;
-  }
-
-  button span {
-    display: block;
-    width: 32px;
-    height: 3px;
-    background-color: white;
-    margin-bottom: 8px;
-    margin-top: 8px;
-    border-radius: 3px;
-    transition: 0.2s ease-in-out 0s;
-  }
-
   nav {
-    display: none;
+    padding: 15px 20px;
+  }
+
+  nav .hamburger-menu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    width: 40px;
+    height: 35px;
+    cursor: pointer;
+  }
+  
+  .hamburger-menu span {
+    z-index: -1;
+    display: block;
+    transition: 0.2s;
+    width: 27px;
+    height: 3px;
+    border-radius: 2px;
+    background-color: aqua;
+  }
+
+  .hamburger-active > span:nth-child(1) {
+    margin-left: 10px;
+    transform: rotate(45deg);
+    transform-origin: top left;
+    background-color: aqua;
+  }
+
+  .hamburger-active > span:nth-child(2) {
+    margin-left: 10px;
+    transform: scale(0);
+  }
+
+  .hamburger-active > span:nth-child(3) {
+    margin-left: 10px;
+    transform: rotate(-45deg);
+    transform-origin: bottom left;
+    background-color: aqua;
   }
 
   nav ul {
-    background-color: #0a9cc0;
-    border: 1px solid whitesmoke;
+    opacity: 0;
     flex-direction: column;
-    position: absolute;
-    top: 50px;
-    right: 0;
-    /* padding: 10px 10px; */
-    border-radius: 10px;
-    text-align: center;
-    animation: effect 0.3s ease;
-  }
-
-  @keyframes effect {
-    0% {
-      transform: translateY(-10px);
-      opacity: 0;
-    }
-
-    100% {
-      transform: translateY(0);
-      opacity: 1;
-    }
-  }
-
-  nav ul li {
-    margin: 5px 5px;
-    padding: 10px 10px;
-    border-radius: 5px;
-  }
-
-  nav ul li a {
-    background-color: transparent;
-  }
-
-  nav ul li:hover {
-    background-color: #0e7490;
-  }
-
-  nav ul li a:hover {
-    background-color: transparent;
-    color: whitesmoke;
-  }
-
-  nav.show {
-    display: flex;
-  }
-
-  .container-1 {
-    width: 85%;
-    max-height: 1000px;
-    display: flex;
-    flex-direction: column;
-  }
-
-  .setting {
-    min-width: 100px;
-  }
-
-  .setting h2 {
-    display: flex;
     align-items: flex-start;
-    letter-spacing: 1px;
+    position: absolute;
+    top: 65px;
+    right: 30px;
+    width: 130px;
+    padding: 10px 5px;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+    transform: translateY(-20px);
+    background-color: #0f172ae1;
+  }
+  
+  nav ul.show {
+    opacity: 1;
+    transform: translateY(0);
   }
 
-  .display {
-    
-    margin: 20px 0 0 -5px;
+  section .container {
+    width: 90%;
+    padding: 0 0 50px 0;
   }
 
-  .display #canvas {
+  .container h2 {
+    font-size: 20px;
+  }
+
+  .container .tabelQR {
+    display: block;
+    width: 100%;
+  }
+
+  .tabelQR .qrSide {
+    width: 85%; 
+    padding: 0;
+    margin: 0 auto;
+  }
+
+  .qrSide div {
+    align-items: start;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .qrSide div label {
+    margin-bottom: 5px;
+  }
+
+  .qrSide div textarea {
+    width: 98%;
+
+  }
+
+  .qrSide div:nth-child(3) {
+    flex-direction: row;
+  }
+
+  .qrSide div #dot-color-1 {
+    width: 100%;
     margin-bottom: 10px;
   }
-
-  .display p {
-    margin-bottom: 10px;
+  
+  .qrSide div #dot-color-2 {
+    width: 100%;
   }
 
-  #DisplayClock {
-    position: relative;
-    display: flex;
-    margin-left: -60px;
-    margin-top: 40px;
+  .qrLoad button {
+    margin-top: 20px;
+    padding: 8px 17px;
   }
 }

@@ -20,45 +20,41 @@
     <title>Home Page</title>
   </head>
   <body>
-    <header>
+    <nav>
+      <div class="logo">
+        <a href="">Logo</a>
+      </div>
+      <div class="hamburger-menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="qrcode - 1/index.html">QRCode</a></li>
+        <li><a href="quots/index.html">Quots</a></li>
+      </ul>
+    </nav>
+
+    <section>
       <div class="container">
-        <div class="wadah-1">
-          <div>
-            <a href="https://instagram.com/rynsyy_" class="logo">Logo</a>
-          </div>
-          <div class="hamburger-menu">
-            <button id="hamburger" name="hamburger" type="button">
-              <span></span>
-              <span></span>
-              <span></span>
-            </button>
-
-            <nav id="nav-menu">
-              <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="qrcode - 1/index.html">QRCode</a></li>
-                <li><a href="quots/index.html">Quots</a></li>
-              </ul>
-            </nav>
-          </div>
+        <div class="sideL">
+          <h5>QR Generator</h5>
+          <h1>Make you QR online (Beta)</h1>
+          <p>Create your own QR in the generator QR here</p>
+          <a href="qrcode - 1/index.html">Lets Start</a>
+        </div>
+        <div class="sideR">
+          <img src="img/QR Code-bro.png" alt="">
         </div>
       </div>
-    </header>
-
-    <div class="container">
-      <div class="colm-1">
-        <div class="mulai">
-          <a href="mulai/index.html">Mulai</a>
-        </div>
-        <div id="DisplayClock"></div>
-      </div>
-    </div>
+    </section>
 
     <script src="date.js"></script>
     <script>
       // Hamburger menu
-      const hamburger = document.querySelector("#hamburger");
-      const navMenu = document.querySelector("#nav-menu");
+      const hamburger = document.querySelector(".hamburger-menu");
+      const navMenu = document.querySelector("nav ul");
 
       hamburger.addEventListener("click", function () {
         hamburger.classList.toggle("hamburger-active");

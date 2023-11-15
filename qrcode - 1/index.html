@@ -23,32 +23,87 @@
     <title>QR Code Maker</title>
   </head>
   <body>
-    <header>
-      <div class="container">
-        <div class="wadah-1">
-          <div>
-            <a href="https://instagram.com/rynsyy_" class="logo">Logo</a>
-          </div>
-          <div class="hamburger-menu">
-            <button id="hamburger" name="hamburger" type="button">
-              <span></span>
-              <span></span>
-              <span></span>
-            </button>
+    <nav>
+      <div class="logo">
+        <a href="">Logo</a>
+      </div>
+      <div class="hamburger-menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <ul>
+        <li><a href="">Home</a></li>
+        <li><a href="">QRCode</a></li>
+        <li><a href="">Quots</a></li>
+      </ul>
+    </nav>
 
-            <nav id="nav-menu">
-              <ul>
-                <li><a href="../index.html">Home</a></li>
-                <li><a href="#">QRCode</a></li>
-                <li><a href="../quots/index.html">Quots</a></li>
-              </ul>
-            </nav>
+    <section>
+      <div class="container">
+        <h2>QRCode Generator</h2>
+        <div class="tabelQR">
+          <div class="qrSide">
+            <div>
+              <label for="data">Input</label>
+              <textarea id="data" class="input-1x" placeholder="Masukan Teks atau URL" spellcheck="false"></textarea>
+            </div>
+            <div>
+              <label for="size">Size</label>
+              <input type="range" id="size" min="22" max="60" value="1" class="input-1x"/>
+            </div>
+            <div>
+              <label for="logo">Logo</label>
+              <input type="file" id="logo" hidden />
+              <div class="buttonFile">
+                <a href="javascript:browse()" title="Upload File">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-file-earmark-arrow-up-fill" viewBox="0 0 16 16">
+                    <path
+                      d="M9.293 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V4.707A1 1 0 0 0 13.707 4L10 .293A1 1 0 0 0 9.293 0zM9.5 3.5v-2l3 3h-2a1 1 0 0 1-1-1zM6.354 9.854a.5.5 0 0 1-.708-.708l2-2a.5.5 0 0 1 .708 0l2 2a.5.5 0 0 1-.708.708L8.5 8.707V12.5a.5.5 0 0 1-1 0V8.707L6.354 9.854z"
+                    />
+                  </svg>
+                </a>
+                <button id="clear" type="button">Clear</button>
+              </div>
+            </div>
+            <div>
+              <label for="margin">Margin</label>
+              <input type="range" id="margin" value="0" min="1" max="15" class="input-1x cursorNone gray" disabled />
+            </div>
+            <div>
+              <label for="dot">Dot Mode</label>
+              <select id="dot">
+                <option value="square">Square</option>
+                <option value="dots">Dots</option>
+                <option value="rounded">Rounded</option>
+                <option value="extra-rounded">Extra Rounded</option>
+                <option value="classy">Classy</option>
+                <option value="classy-rounded">Classy Rounded</option>
+              </select>
+            </div>
+            <div>
+              <label for="dot-color">Dot Color</label>
+              <input type="color" id="dot-color-1" />
+              <input type="color" id="dot-color-2" />
+            </div>
+            <div>
+              <label for="bg-color">Bg Color</label>
+              <input type="color" id="bg-color" />
+            </div>
+          </div>
+          <div class="qrResult">
+            <div class="qrLoad">
+
+              <div id="canvas"></div>
+              <p>230px x 230px</p>
+              <button class="btn-download" id="btn-dl" type="button">Download</button>
+            </div>
           </div>
         </div>
       </div>
-    </header>
+    </section>
 
-    <div class="container-1">
+    <!-- <div class="container-1">
       <div class="setting">
         <h2>QRCode Generator</h2>
         <div class="input-wrap">
@@ -71,7 +126,7 @@
         </div>
         <div class="input-wrap">
           <label for="margin">Margin</label>
-          <input type="range" id="margin" value="0" min="1" max="30" class="input-1x" />
+          <input type="range" id="margin" value="0" min="1" max="15" class="input-1x cursorNone" disabled/>
         </div>
         <div class="input-wrap">
           <label for="dot">Dot Mode</label>
@@ -102,27 +157,8 @@
           <div id="DisplayClock" class="clock" onload="showTime()" title="Clock"></div>
         </div>
       </div>
-    </div>
-
+    </div> -->
 
     <script src="toggle.js"></script>
-    <script>
-      // Hamburger menu
-      const hamburger = document.querySelector("#hamburger");
-      const navMenu = document.querySelector("#nav-menu");
-
-      hamburger.addEventListener("click", function () {
-        hamburger.classList.toggle("hamburger-active");
-        navMenu.classList.toggle("show");
-      });
-
-      // Klik di luar hamburger
-      window.addEventListener("click", function (e) {
-        if (e.target != hamburger && e.target != navMenu) {
-          hamburger.classList.remove("hamburger-active");
-          navMenu.classList.remove("show");
-        }
-      });
-    </script>
   </body>
 </html>

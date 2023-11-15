@@ -1,35 +1,36 @@
-function showTime() {
-  var date = new Date();
-  var h = date.getHours();
-  var m = date.getMinutes();
-  var s = date.getSeconds();
-  var session = "AM";
+// function showTime() {
+//   var date = new Date();
+//   var h = date.getHours();
+//   var m = date.getMinutes();
+//   var s = date.getSeconds();
+//   var session = "AM";
 
-  if (h == 0) {
-    h = 12;
-  }
-  if (h > 12) {
-    h = h - 12;
-    session = "PM";
-  }
+//   if (h == 0) {
+//     h = 12;
+//   }
+//   if (h > 12) {
+//     h = h - 12;
+//     session = "PM";
+//   }
 
-  h = h < 10 ? "0" + h : h;
-  m = m < 10 ? "0" + m : m;
-  s = s < 10 ? "0" + s : s;
+//   h = h < 10 ? "0" + h : h;
+//   m = m < 10 ? "0" + m : m;
+//   s = s < 10 ? "0" + s : s;
 
-  var time = h + "  " + " - " + "  " + m;
+//   var time = h + "  " + " - " + "  " + m;
 
-  document.getElementById("DisplayClock").innerText = time;
-  document.getElementById("DisplayClock").textContent = time;
+//   document.getElementById("DisplayClock").innerText = time;
+//   document.getElementById("DisplayClock").textContent = time;
 
-  setTimeout(showTime, 1000);
-}
+//   setTimeout(showTime, 1000);
+// }
 
-showTime();
+// showTime();
 
 const textEl = document.querySelector("#data");
 const sizeEl = document.querySelector("#size");
 const logoEl = document.querySelector("#logo");
+const logoA = document.querySelector(".bi-file-earmark-arrow-up-fill");
 const clearEl = document.querySelector("#clear");
 const marginEl = document.querySelector("#margin");
 const dotModeEl = document.querySelector("#dot");
@@ -38,10 +39,50 @@ const dotColorEl2 = document.querySelector("#dot-color-2");
 const bgEl = document.querySelector("#bg-color");
 const dlEl = document.querySelector("#btn-dl");
 
+logoA.addEventListener("click", function () {
+  marginEl.classList.remove("cursorNone");
+  marginEl.removeAttribute("disabled");
+  marginEl.classList.remove("gray");
+  marginEl.classList.add("white");
+});
+
+clearEl.addEventListener("click", function () {
+  marginEl.classList.add("cursorNone");
+  marginEl.setAttribute("disabled", "disabled");
+  marginEl.classList.add("gray");
+  marginEl.classList.remove("white");
+});
+
+// if (textEl.addEventListener) {
+//   textEl.addEventListener(
+//     "input",
+//     function () {
+//       textEl.classList.remove("cursorNone");
+//       textEl.removeAttribute("disabled");
+//     },
+//     false
+//   );
+// } else if (textEl.attachEvent) {
+//   textEl.attachEvent("onpropertychange", function () {
+//     sizeEl.classList.add("cursorNone");
+//     sizeEl.setAttribute("disabled", "disabled");
+//   });
+// }
+
+// textEl.addEventListener("onchange", function () {
+//   if ("input") {
+//     sizeEl.classList.remove("cursorNone");
+//     sizeEl.removeAttribute("disabled");
+//   } else {
+//     sizeEl.classList.add("cursorNone");
+//     sizeEl.setAttribute("disabled", "disabled");
+//   }
+// });
+
 let op = {
-  width: 100,
-  height: 100,
-  type: "png",
+  width: 110,
+  height: 110,
+  type: "jpg",
   data: textEl.value,
   image: "",
   dotsOptions: {
@@ -66,11 +107,11 @@ let op = {
   },
 };
 
-render();
+// render();
 
 sizeEl.addEventListener("input", (e) => {
-  op.width = e.target.value * 10;
-  op.height = e.target.value * 10;
+  op.width = e.target.value * 5;
+  op.height = e.target.value * 5;
   render();
 });
 
@@ -133,5 +174,22 @@ clearEl.addEventListener("click", (e) => {
 });
 
 dlEl.addEventListener("click", (e) => {
-  qrCode.download({ name: "QR Code kamu", extenstion: "svg" });
+  qrCode.download({ name: "© @rynsyy_", extenstion: "jpg, svg, png, jpeg" });
+});
+
+// Hamburger menu
+const hamburger = document.querySelector(".hamburger-menu");
+const navMenu = document.querySelector("nav ul");
+
+hamburger.addEventListener("click", function () {
+  hamburger.classList.toggle("hamburger-active");
+  navMenu.classList.toggle("show");
+});
+
+// Klik di luar hamburger
+window.addEventListener("click", function (e) {
+  if (e.target != hamburger && e.target != navMenu) {
+    hamburger.classList.remove("hamburger-active");
+    navMenu.classList.remove("show");
+  }
 });
