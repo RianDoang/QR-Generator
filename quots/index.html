@@ -20,30 +20,21 @@
     <title>Quot's a Day</title>
   </head>
   <body>
-    <header>
-      <div class="container">
-        <div class="wadah-1">
-          <div>
-            <a href="https://instagram.com/rynsyy_" class="logo">Logo</a>
-          </div>
-          <div class="hamburger-menu">
-            <button id="hamburger" name="hamburger" type="button">
-              <span></span>
-              <span></span>
-              <span></span>
-            </button>
-
-            <nav id="nav-menu">
-              <ul>
-                <li><a href="../index.html">Home</a></li>
-                <li><a href="../qrcode - 1/index.html">QRCode</a></li>
-                <li><a href="#">Quots</a></li>
-              </ul>
-            </nav>
-          </div>
-        </div>
+    <nav>
+      <div class="logo">
+        <a href="">Logo</a>
       </div>
-    </header>
+      <div class="hamburger-menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <ul>
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="../qrcode - 1/index.html">QRCode</a></li>
+        <li><a href="#">Quots</a></li>
+      </ul>
+    </nav>
 
     <div class="container1">
       <div class="quote-box">
@@ -57,11 +48,10 @@
       </div>
     </div>
 
-
     <script>
       // Hamburger menu
-      const hamburger = document.querySelector("#hamburger");
-      const navMenu = document.querySelector("#nav-menu");
+      const hamburger = document.querySelector(".hamburger-menu");
+      const navMenu = document.querySelector("nav ul");
 
       hamburger.addEventListener("click", function () {
         hamburger.classList.toggle("hamburger-active");
