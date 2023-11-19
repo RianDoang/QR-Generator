@@ -10,14 +10,13 @@
 body {
   font-family: "Poppins", sans-serif;
   /* background-color: #379df1; */
-  overflow: hidden;
+  overflow-x: hidden;
   background-image: url("img/Background\ Main\ Menu.png");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
   background-attachment: fixed;
-  height: 100vh;
-  overflow: hidden;
+
 }
 
 nav {
@@ -122,20 +121,10 @@ nav ul li a:hover::after {
   object-fit: cover;
 }
 
-/* Extra Extra Larger */
-@media screen and (max-width: 1400px) {
-  .mulai {
-    margin: 0 auto;
-  }
-
-  .mulai a {
-    font-size: 36px;
-  }
-}
-
+/* Mobile */
 @media screen and (max-width: 576px) {
   nav {
-    padding: 15px 20px;
+    padding: 25px 25px;
   }
 
   nav .hamburger-menu {
@@ -191,10 +180,41 @@ nav ul li a:hover::after {
     border-radius: 6px;
     transform: translateY(-20px);
     background-color: #0f172ae1;
+    z-index: 1;
   }
   
   nav ul.show {
     opacity: 1;
     transform: translateY(0);
+    z-index: 1;
+  }
+
+  section .container {
+    flex-direction: column;
+    position: relative;
+  }
+
+  .container .sideL {
+    width: 90%;
+    margin: 30px auto;
+  }
+
+  .sideL h5 {
+    font-size: 12px;
+    margin-bottom: -10px;
+  }
+
+  .sideL h1 {
+    font-size: 45px;
+  }
+
+  .container .sideR {
+    width: 100%;
+  }
+
+  .sideR img {
+    width: 100%;
+    margin-top: 20px;
+    margin-bottom: 60px;
   }
 }
