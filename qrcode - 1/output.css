@@ -21,16 +21,16 @@ nav {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 20px 50px;
+  margin: 0 auto;
+  width: 93%;
+  padding: 15px 25px;
+  border-bottom: 1px solid rgba(245, 245, 245, 0.507);
 }
 
-nav .logo a {
-  text-decoration: none;
-  color: whitesmoke;
-  font-weight: 600;
-  font-size: 25px;
-  text-transform: uppercase;
-  letter-spacing: 1px;
+nav .logo svg {
+  color: white;
+  margin-left: 10px;
+  padding-top: 8px;
 }
 
 .hamburger-menu {
@@ -38,6 +38,7 @@ nav .logo a {
 }
 
 nav ul {
+  padding-top: 10px;
   list-style: none;
   display: flex;
   gap: 10px;
@@ -59,7 +60,9 @@ nav ul li a {
 nav ul li a::after {
   content: "";
   display: block;
-  border-bottom: 1px solid #010101;
+  margin-top: 5px;
+  border-bottom: 2px solid #ffffff;
+  border-radius: 5px;
   width: 100%;
   transition: 0.2s linear;
   transform: scaleX(0);
@@ -82,12 +85,13 @@ section .container {
   max-height: 20000px;
   border-radius: 6px;
   margin-bottom: 50px;
+  margin-top: 50px;
 }
 
 .container h2 {
   text-align: center;
   color: whitesmoke;
-  margin: 25px auto 15px auto;
+  margin: 30px auto 20px auto;
 }
 
 .container .tabelQR {
@@ -374,9 +378,13 @@ button:hover {
 
 /* Small */
 @media screen and (max-width: 576px) {
-  nav {
-    padding: 25px 25px;
-  }
+    nav {
+        padding: 15px 0;
+      }
+    
+      nav .logo svg {
+        margin-left: 15px;
+      }
 
   nav .hamburger-menu {
     display: flex;
@@ -387,6 +395,7 @@ button:hover {
     width: 40px;
     height: 35px;
     cursor: pointer;
+    margin-right: 8px;
   }
   
   .hamburger-menu span {

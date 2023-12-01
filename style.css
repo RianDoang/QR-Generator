@@ -136,7 +136,7 @@ nav ul li a:hover::after {
 }
 
 .sideL a:nth-child(5):hover {
-  background-color: #089db8;
+  background-color: #0987a7;
 }
 
 .sideL a:nth-child(5) svg:nth-child(1) {
@@ -185,6 +185,10 @@ nav ul li a:hover::after {
     padding: 15px 0;
   }
 
+  nav .logo svg {
+    margin-left: 15px;
+  }
+
   nav .hamburger-menu {
     display: flex;
     flex-direction: column;
@@ -194,6 +198,7 @@ nav ul li a:hover::after {
     width: 40px;
     height: 35px;
     cursor: pointer;
+    margin-right: 8px;
   }
   
   .hamburger-menu span {
@@ -231,7 +236,7 @@ nav ul li a:hover::after {
     align-items: flex-start;
     position: absolute;
     top: 65px;
-    right: 30px;
+    right: 40px;
     width: 130px;
     padding: 10px 5px;
     border: 1px solid #cbd5e1;
