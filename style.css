@@ -256,12 +256,15 @@ nav ul li a:hover::after {
 
   .sideL h5 {
     font-size: 12px;
-    
   }
 
   .sideL h1 {
     font-size: 45px;
   }
+
+    .sideL a:nth-child(3) {
+      margin-bottom: 20px;
+    }
 
   .container .sideR {
     width: 100%;
