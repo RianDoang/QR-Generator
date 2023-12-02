@@ -28,6 +28,7 @@
     <div class="bgShape">
       <span></span>
       <span></span>
+      <span></span>
     </div>
     <nav>
       <div class="logo">
@@ -62,6 +63,84 @@
       </ul>
     </nav>
 
+    <div class="whtHr">
+      <div class="container">
+        <div>
+          <div class="dotsWht">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="Xicon">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="25"
+              height="25"
+              fill="currentColor"
+              class="bi bi-x-lg"
+              viewBox="0 0 16 16"
+            >
+              <path
+                d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8z"
+              />
+            </svg>
+          </div>
+        </div>
+        <p>
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quaerat
+          minus officia incidunt? Officia doloribus odio facere consequuntur
+          numquam, maiores aperiam quo debitis. Voluptate nulla blanditiis,
+          molestias sit, cupiditate esse laudantium libero harum sequi in beatae
+          inventore deserunt sapiente sunt corporis id dolore, cumque obcaecati
+          consequuntur ipsum perferendis vel alias exercitationem aliquid. Nulla
+          eius odio sunt veritatis quam porro, quibusdam ratione aspernatur at
+          iure omnis itaque impedit enim deserunt voluptatum ullam fugit debitis
+          corporis earum dolore sint aut et commodi! Aut pariatur voluptate nam
+          alias aspernatur repellat perferendis vero soluta, quidem suscipit
+          dignissimos, reiciendis deleniti a, laudantium itaque dolore rem.
+          Perferendis.
+        </p>
+      </div>
+    </div>
+    <div class="abtS">
+      <div class="container">
+        <div>
+          <div class="dotsWht">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="CloseBtn">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="25"
+              height="25"
+              fill="currentColor"
+              class="bi bi-x-lg"
+              viewBox="0 0 16 16"
+            >
+              <path
+                d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8z"
+              />
+            </svg>
+          </div>
+        </div>
+        <p>
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quaerat
+          minus officia incidunt? Officia doloribus odio facere consequuntur
+          numquam, maiores aperiam quo debitis. Voluptate nulla blanditiis,
+          molestias sit, cupiditate esse laudantium libero harum sequi in beatae
+          inventore deserunt sapiente sunt corporis id dolore, cumque obcaecati
+          consequuntur ipsum perferendis vel alias exercitationem aliquid. Nulla
+          eius odio sunt veritatis quam porro, quibusdam ratione aspernatur at
+          iure omnis itaque impedit enim deserunt voluptatum ullam fugit debitis
+          corporis earum dolore sint aut et commodi! Aut pariatur voluptate nam
+          alias aspernatur repellat perferendis vero soluta, quidem suscipit
+          dignissimos, reiciendis deleniti a, laudantium itaque dolore rem.
+          Perferendis.
+        </p>
+      </div>
+    </div>
     <section>
       <div class="container">
         <div class="sideL">
@@ -74,7 +153,7 @@
             </div>
           </h5>
           <h1>Make your QR Online (Beta)</h1>
-          <a href="">
+          <button id="whtHere">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               height="12"
@@ -88,8 +167,8 @@
               />
             </svg>
             What's here
-          </a>
-          <a href="">
+          </button>
+          <button id="abtUs">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               height="12"
@@ -103,7 +182,7 @@
               />
             </svg>
             About Us
-          </a>
+          </button>
           <a href="qrcode - 1/index.html">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -162,6 +241,34 @@
           hamburger.classList.remove("hamburger-active");
           navMenu.classList.remove("show");
         }
+      });
+
+      const idWhtHere = document.querySelector("#whtHere");
+      const bdy = document.querySelector("body");
+      const IdAbtUs = document.querySelector("#abtUs");
+      const whatsHere = document.querySelector(".whtHr");
+      const aboutUs = document.querySelector(".abtS");
+      const iconX = document.querySelector(".Xicon");
+      const ClsBtn = document.querySelector(".CloseBtn");
+
+      idWhtHere.addEventListener("click", function () {
+        whatsHere.classList.add("popin");
+        bdy.classList.add("noScroll");
+      });
+      
+      IdAbtUs.addEventListener("click", function () {
+        aboutUs.classList.add("popin");
+        bdy.classList.add("noScroll");
+      });
+      
+      iconX.addEventListener("click", function () {
+        whatsHere.classList.remove("popin");
+        bdy.classList.remove("noScroll");
+      });
+      
+      ClsBtn.addEventListener("click", function () {
+        aboutUs.classList.remove("popin");
+        bdy.classList.remove("noScroll");
       });
     </script>
   </body>

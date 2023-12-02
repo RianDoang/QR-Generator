@@ -20,6 +20,10 @@ body {
   background-attachment: fixed; */
 }
 
+body.noScroll {
+  overflow-y: hidden;
+}
+
 .bgShape {
   position: absolute;
   top: -150px;
@@ -36,7 +40,7 @@ body {
   height: 600px;
   position: absolute;
   top: 200px;
-  left: 600px;
+  left: 550px;
   border-radius: 50%;
   transform: rotate(-45deg);
 }
@@ -49,6 +53,17 @@ body {
   position: absolute;
   top: 500px;
   left: 900px;
+  transform: rotate(-20deg);
+}
+
+.bgShape span:nth-child(3) {
+  background-color: rgba(99, 116, 140, 0.4);
+  width: 80px;
+  height: 300px;
+  border-radius: 50%;
+  position: absolute;
+  top: 250px;
+  left: 950px;
   transform: rotate(-20deg);
 }
 
@@ -155,41 +170,259 @@ nav ul li a:hover::after {
   margin-bottom: 30px;
 }
 
-.sideL a:nth-child(3) {
-  margin-bottom: 15px;
+.sideL button:nth-child(3) {
+  cursor: pointer;
+  margin-bottom: 20px;
   font-size: 17px;
   display: block;
   color: #22d3ee;
-  text-decoration: none;
   width: 150px;
   display: flex;
   align-items: center;
+  background-color: transparent;
+  border: none;
+  outline: none;
 }
 
-.sideL a:nth-child(3) svg {
+.sideL button:nth-child(3) svg {
   padding-right: 5px;
   transition: 0.2s;
 }
 
-.sideL a:nth-child(3):hover svg {
+.sideL button:nth-child(3):hover svg {
   padding-right: 8px;
 }
 
-.sideL a:nth-child(4) {
+.sideL button:nth-child(4) {
+  cursor: pointer;
+  margin-bottom: 50px;
   font-size: 17px;
   display: block;
   color: #22d3ee;
-  text-decoration: none;
-  margin-bottom: 60px;
   width: 150px;
+  display: flex;
+  align-items: center;
+  background-color: transparent;
+  border: none;
+  outline: none;
 }
-.sideL a:nth-child(4) svg {
-  padding-right: 3px;
+.sideL button:nth-child(4) svg {
+  padding-right: 7px;
   transition: 0.2s;
 }
 
-.sideL a:nth-child(4):hover svg {
-  padding-right: 8px;
+.sideL button:nth-child(4):hover svg {
+  padding-right: 10px;
+}
+
+.whtHr {
+  opacity: 0;
+  backdrop-filter: blur(10px);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  transform: scale(0.8);
+  transition: 70ms linear;
+  z-index: -1;
+}
+
+.whtHr.popin {
+  opacity: 1;
+  transform: scale(1);
+  backdrop-filter: blur(10px);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: 1;
+}
+
+.whtHr .container {
+  background-color: #020617;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 75%;
+  border-radius: 5px;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.whtHr .container div:nth-child(1) {
+  padding: 15px 0;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.whtHr .container div:nth-child(1) .dotsWht {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 10px;
+  width: 100px;
+  margin-left: 20px;
+}
+
+.whtHr .container div:nth-child(1) .dotsWht span:nth-child(1) {
+  width: 15px;
+  height: 15px;
+  border-radius: 100%;
+  background-color: #ef4444;
+}
+
+.whtHr .container div:nth-child(1) .dotsWht span:nth-child(2) {
+  width: 15px;
+  height: 15px;
+  border-radius: 100%;
+  background-color: #eab308;
+}
+
+.whtHr .container div:nth-child(1) .dotsWht span:nth-child(3) {
+  width: 15px;
+  height: 15px;
+  border-radius: 100%;
+  background-color: #22c55e;
+}
+
+.whtHr .container div:nth-child(1) .Xicon {
+  cursor: pointer;
+  padding: 7px;
+  margin-right: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 100%;
+  transition: 50ms;
+}
+
+.whtHr .container div:nth-child(1) .Xicon:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.whtHr .container div:nth-child(1) .Xicon svg {
+  color: white;
+}
+
+.whtHr .container p {
+  padding: 5px 20px;
+  width: 95%;
+  margin: 0 auto;
+  color: white;
+  font-size: 17px;
+}
+
+.abtS {
+  opacity: 0;
+  backdrop-filter: blur(10px);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  transform: scale(0.8);
+  transition: 70ms linear;
+  z-index: -1;
+}
+
+.abtS.popin {
+  opacity: 1;
+  transform: scale(1);
+  backdrop-filter: blur(10px);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: 1;
+}
+
+.abtS .container {
+  background-color: #020617;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 75%;
+  border-radius: 5px;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.abtS .container div:nth-child(1) {
+  padding: 15px 0;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.abtS .container div:nth-child(1) .dotsWht {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 10px;
+  width: 100px;
+  margin-left: 20px;
+}
+
+.abtS .container div:nth-child(1) .dotsWht span:nth-child(1) {
+  width: 15px;
+  height: 15px;
+  border-radius: 100%;
+  background-color: #ef4444;
+}
+
+.abtS .container div:nth-child(1) .dotsWht span:nth-child(2) {
+  width: 15px;
+  height: 15px;
+  border-radius: 100%;
+  background-color: #eab308;
+}
+
+.abtS .container div:nth-child(1) .dotsWht span:nth-child(3) {
+  width: 15px;
+  height: 15px;
+  border-radius: 100%;
+  background-color: #22c55e;
+}
+
+.abtS .container div:nth-child(1) .CloseBtn {
+  cursor: pointer;
+  padding: 7px;
+  margin-right: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 100%;
+  transition: 50ms;
+}
+
+.abtS .container div:nth-child(1) .CloseBtn:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.abtS .container div:nth-child(1) .CloseBtn svg {
+  color: white;
+}
+
+.abtS .container p {
+  padding: 5px 20px;
+  width: 95%;
+  margin: 0 auto;
+  color: white;
+  font-size: 17px;
 }
 
 .sideL a:nth-child(5) {
@@ -268,9 +501,9 @@ nav ul li a:hover::after {
 
   .bgShape span:nth-child(1) {
     height: 800px;
-    top: 450px;
-    left: 0;
-    transform: rotate(-20deg);
+    top: 300px;
+    left: 50px;
+    transform: rotate(-30deg);
   }
 
   .bgShape span:nth-child(2) {
@@ -278,6 +511,10 @@ nav ul li a:hover::after {
     top: 250px;
     left: 300px;
     transform: rotate(-20deg);
+  }
+
+  .bgShape span:nth-child(3) {
+    display: none;
   }
 
   nav {
@@ -367,6 +604,28 @@ nav ul li a:hover::after {
 
   .sideL a:nth-child(3) {
     margin-bottom: 20px;
+  }
+
+  .whtHr .container {
+    width: 90%;
+  }
+
+  .whtHr .container p {
+    width: 90%;
+    padding: 5px 0 20px 0;
+    display: inline-block;
+    overflow-y: scroll;
+  }
+
+  .abtS .container {
+    width: 90%;
+  }
+
+  .abtS .container p {
+    width: 90%;
+    padding: 5px 0 20px 0;
+    display: inline-block;
+    overflow-y: scroll;
   }
 
   .container .sideR {
