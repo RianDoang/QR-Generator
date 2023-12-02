@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
 
 * {
@@ -9,14 +9,47 @@
 
 body {
   font-family: "Poppins", sans-serif;
-  background-color: #08234d;
-  overflow-x: hidden;
+  background-color: #0f172a;
+  overflow: hidden;
+  width: 100%;
+  height: 100vh;
   /* background-image: url("img/Background\ Main\ Menu.png");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
   background-attachment: fixed; */
+}
 
+.bgShape {
+  position: absolute;
+  top: -150px;
+  left: -170px;
+  width: 150%;
+  height: 150vh;
+  filter: blur(80px);
+  z-index: -1;
+}
+
+.bgShape span:nth-child(1) {
+  background-color: rgba(0, 255, 255, 0.3);
+  width: 80px;
+  height: 600px;
+  position: absolute;
+  top: 200px;
+  left: 600px;
+  border-radius: 50%;
+  transform: rotate(-45deg);
+}
+
+.bgShape span:nth-child(2) {
+  background-color: rgb(220, 40, 40, 0.4);
+  width: 80px;
+  height: 300px;
+  border-radius: 50%;
+  position: absolute;
+  top: 500px;
+  left: 900px;
+  transform: rotate(-20deg);
 }
 
 nav {
@@ -45,7 +78,7 @@ nav ul {
   display: flex;
   gap: 10px;
   transition: 0.2s linear;
-  transition-delay: .1s;
+  transition-delay: 0.1s;
 }
 
 nav ul li a {
@@ -94,6 +127,24 @@ nav ul li a:hover::after {
   font-weight: 600;
   font-size: 10px;
   margin-top: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.sideL h5 div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 50px;
+}
+
+.sideL h5 div span {
+  display: flex;
+  width: 4px;
+  height: 4px;
+  border-radius: 100%;
+  background-color: rgb(255, 255, 255, 0.7);
 }
 
 .sideL h1 {
@@ -111,6 +162,17 @@ nav ul li a:hover::after {
   color: #22d3ee;
   text-decoration: none;
   width: 150px;
+  display: flex;
+  align-items: center;
+}
+
+.sideL a:nth-child(3) svg {
+  padding-right: 5px;
+  transition: 0.2s;
+}
+
+.sideL a:nth-child(3):hover svg {
+  padding-right: 8px;
 }
 
 .sideL a:nth-child(4) {
@@ -120,6 +182,14 @@ nav ul li a:hover::after {
   text-decoration: none;
   margin-bottom: 60px;
   width: 150px;
+}
+.sideL a:nth-child(4) svg {
+  padding-right: 3px;
+  transition: 0.2s;
+}
+
+.sideL a:nth-child(4):hover svg {
+  padding-right: 8px;
 }
 
 .sideL a:nth-child(5) {
@@ -175,12 +245,41 @@ nav ul li a:hover::after {
 }
 
 .sideR img {
-  width:480px;
+  width: 480px;
   object-fit: cover;
 }
 
 /* Mobile */
 @media screen and (max-width: 576px) {
+  body {
+    overflow-y: visible;
+  }
+
+  .bgShape {
+    position: absolute;
+    top: -200px;
+    left: 0;
+    width: 100%;
+    height: 170%;
+    filter: blur(80px);
+    z-index: -1;
+    overflow-x: hidden;
+  }
+
+  .bgShape span:nth-child(1) {
+    height: 800px;
+    top: 450px;
+    left: 0;
+    transform: rotate(-20deg);
+  }
+
+  .bgShape span:nth-child(2) {
+    height: 500px;
+    top: 250px;
+    left: 300px;
+    transform: rotate(-20deg);
+  }
+
   nav {
     padding: 15px 0;
   }
@@ -200,7 +299,7 @@ nav ul li a:hover::after {
     cursor: pointer;
     margin-right: 8px;
   }
-  
+
   .hamburger-menu span {
     z-index: -1;
     display: block;
@@ -245,7 +344,7 @@ nav ul li a:hover::after {
     background-color: #0f172ae1;
     z-index: 1;
   }
-  
+
   nav ul.show {
     opacity: 1;
     transform: translateY(0);
@@ -262,17 +361,13 @@ nav ul li a:hover::after {
     padding-left: 5px;
   }
 
-  .sideL h5 {
-    font-size: 12px;
-  }
-
   .sideL h1 {
     font-size: 45px;
   }
 
-    .sideL a:nth-child(3) {
-      margin-bottom: 20px;
-    }
+  .sideL a:nth-child(3) {
+    margin-bottom: 20px;
+  }
 
   .container .sideR {
     width: 100%;
