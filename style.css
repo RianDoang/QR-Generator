@@ -170,7 +170,7 @@ nav ul li a:hover::after {
   margin-bottom: 30px;
 }
 
-.sideL button:nth-child(3) {
+.sideL a:nth-child(3) {
   cursor: pointer;
   margin-bottom: 20px;
   font-size: 17px;
@@ -182,18 +182,19 @@ nav ul li a:hover::after {
   background-color: transparent;
   border: none;
   outline: none;
+  text-decoration: none;
 }
 
-.sideL button:nth-child(3) svg {
+.sideL a:nth-child(3) svg {
   padding-right: 5px;
   transition: 0.2s;
 }
 
-.sideL button:nth-child(3):hover svg {
+.sideL a:nth-child(3):hover svg {
   padding-right: 8px;
 }
 
-.sideL button:nth-child(4) {
+.sideL a:nth-child(4) {
   cursor: pointer;
   margin-bottom: 50px;
   font-size: 17px;
@@ -205,13 +206,14 @@ nav ul li a:hover::after {
   background-color: transparent;
   border: none;
   outline: none;
+  text-decoration: none;
 }
-.sideL button:nth-child(4) svg {
+.sideL a:nth-child(4) svg {
   padding-right: 7px;
   transition: 0.2s;
 }
 
-.sideL button:nth-child(4):hover svg {
+.sideL a:nth-child(4):hover svg {
   padding-right: 10px;
 }
 
@@ -224,7 +226,7 @@ nav ul li a:hover::after {
   width: 100%;
   height: 100vh;
   transform: scale(0.8);
-  transition: 70ms linear;
+  transition: 200ms;
   z-index: -1;
 }
 
@@ -241,6 +243,7 @@ nav ul li a:hover::after {
 }
 
 .whtHr .container {
+  opacity: 0;
   background-color: #020617;
   position: absolute;
   top: 50%;
@@ -253,6 +256,7 @@ nav ul li a:hover::after {
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
+  transition-duration: 200ms;
 }
 
 .whtHr .container div:nth-child(1) {
@@ -329,7 +333,7 @@ nav ul li a:hover::after {
   width: 100%;
   height: 100vh;
   transform: scale(0.8);
-  transition: 70ms linear;
+  transition: 150ms;
   z-index: -1;
 }
 
@@ -358,6 +362,7 @@ nav ul li a:hover::after {
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
+  transition-duration: 200ms;
 }
 
 .abtS .container div:nth-child(1) {
@@ -486,6 +491,7 @@ nav ul li a:hover::after {
 @media screen and (max-width: 576px) {
   body {
     overflow-y: visible;
+    height: 100vh;
   }
 
   .bgShape {
@@ -579,7 +585,7 @@ nav ul li a:hover::after {
     border-radius: 6px;
     transform: translateY(-20px);
     background-color: #0f172ae1;
-    z-index: 1;
+    z-index: -1;
   }
 
   nav ul.show {
@@ -606,10 +612,15 @@ nav ul li a:hover::after {
     margin-bottom: 20px;
   }
 
+  .whtHr {
+    transition-duration: 350ms;
+  }
+  
   .whtHr .container {
     width: 90%;
+    top: 47%;
   }
-
+  
   .whtHr .container p {
     width: 90%;
     padding: 5px 0 20px 0;
@@ -617,8 +628,13 @@ nav ul li a:hover::after {
     overflow-y: scroll;
   }
 
+  .abtS {
+    transition-duration: 350ms;
+  }
+
   .abtS .container {
     width: 90%;
+    top: 47%;
   }
 
   .abtS .container p {

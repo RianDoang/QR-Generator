@@ -153,7 +153,7 @@
             </div>
           </h5>
           <h1>Make your QR Online (Beta)</h1>
-          <button id="whtHere">
+          <a href="#" id="whtHere">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               height="12"
@@ -167,8 +167,8 @@
               />
             </svg>
             What's here
-          </button>
-          <button id="abtUs">
+          </a>
+          <a href="#" id="abtUs">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               height="12"
@@ -182,7 +182,7 @@
               />
             </svg>
             About Us
-          </button>
+          </a>
           <a href="qrcode - 1/index.html">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -247,26 +247,38 @@
       const bdy = document.querySelector("body");
       const IdAbtUs = document.querySelector("#abtUs");
       const whatsHere = document.querySelector(".whtHr");
+      whatsHereCon = document.querySelector(".whtHr .container");
       const aboutUs = document.querySelector(".abtS");
+      aboutUsCon = document.querySelector(".abtS .container");
       const iconX = document.querySelector(".Xicon");
       const ClsBtn = document.querySelector(".CloseBtn");
 
       idWhtHere.addEventListener("click", function () {
+        idWhtHere.setAttribute("href", "#");
+        whatsHere.style.transitionDelay = "0.6s";
         whatsHere.classList.add("popin");
         bdy.classList.add("noScroll");
+        whatsHereCon.style.opacity = "1";
       });
-      
+
       IdAbtUs.addEventListener("click", function () {
+        IdAbtUs.setAttribute("href", "#");
+        aboutUs.style.transitionDelay = "0.6s";
         aboutUs.classList.add("popin");
         bdy.classList.add("noScroll");
+        aboutUsCon.style.opacity = "1";
       });
-      
+
       iconX.addEventListener("click", function () {
+        idWhtHere.removeAttribute("href");
+        whatsHere.style.transitionDelay = "0.1s";
         whatsHere.classList.remove("popin");
         bdy.classList.remove("noScroll");
       });
       
       ClsBtn.addEventListener("click", function () {
+        IdAbtUs.removeAttribute("href");
+        aboutUs.style.transitionDelay = "0.1s";
         aboutUs.classList.remove("popin");
         bdy.classList.remove("noScroll");
       });
