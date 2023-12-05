@@ -20,9 +20,6 @@
       crossorigin="anonymous"
     />
 
-    <!-- Aos -->
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
-
     <link rel="stylesheet" href="style.css" />
     <link rel="icon" href="img/ppp.jpg" />
     <title>Home Page</title>
@@ -74,7 +71,7 @@
             <span></span>
             <span></span>
           </div>
-          <div class="Xicon">
+          <div class="Xicon" onclick="ClosePopin()">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="25"
@@ -113,7 +110,7 @@
             <span></span>
             <span></span>
           </div>
-          <div class="CloseBtn">
+          <div class="CloseBtn" onclick="ClosePopin()">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="25"
@@ -155,20 +152,14 @@
               <span></span>
             </div>
           </h5>
-          <h1
-            data-aos="fade-right"
-            data-aos-duration="1000"
-            data-aos-delay="200"
-            data-aos-once="true"
-          >
+          <h1 class="fade-left-element" style="--animation-delay: 0s">
             Make your QR Online (Beta)
           </h1>
-          <a
-            href="#"
+          <button
+            onclick="WhatsHere()"
             id="whtHere"
-            data-aos="fade-right"
-            data-aos-delay="1000"
-            data-aos-once="true"
+            class="fade-left-element"
+            style="--animation-delay: 0.7s"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -183,13 +174,12 @@
               />
             </svg>
             What's here
-          </a>
-          <a
-            href="#"
+          </button>
+          <button
+            onclick="AboutUs()"
             id="abtUs"
-            data-aos="fade-right"
-            data-aos-delay="1300"
-            data-aos-once="true"
+            class="fade-left-element"
+            style="--animation-delay: 1s"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -204,14 +194,11 @@
               />
             </svg>
             About Us
-          </a>
+          </button>
           <a
             href="qrcode - 1/index.html"
-            data-aos="fade-in"
-            data-aos-delay="1700"
-            data-aos-duration="2000"
-            data-aos-easing="ease"
-            data-aos-once="true"
+            class="fade-left-element"
+            style="--animation-delay: 2s"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -251,21 +238,14 @@
           <img
             src="img/QR Code-custom.png"
             alt=""
-            data-aos="fade-left"
-            data-aos-delay="600"
-            data-aos-duration="1000"
-            data-aos-once="true"
+            class="fade-right-element"
+            style="--animation-delay: 0.5s"
           />
         </div>
       </div>
     </section>
 
-    <!-- <script src="date.js"></script> -->
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-
     <script>
-      AOS.init();
-
       // Hamburger menu
       const hamburger = document.querySelector(".hamburger-menu");
       const navMenu = document.querySelector("nav ul");
@@ -283,6 +263,43 @@
         }
       });
 
+      function fadeIn(element) {
+        var rect = element.getBoundingClientRect();
+        var viewHeight = Math.max(
+          document.documentElement.clientHeight,
+          window.innerHeight
+        );
+
+        if (rect.top >= 0 && rect.bottom <= viewHeight) {
+          element.classList.add(
+            "fade"
+          ); /* Menambah kelas 'fade' untuk menerapkan animasi */
+        }
+      }
+
+      var fadeLeftElements = document.querySelectorAll(".fade-left-element");
+      var fadeRightElements = document.querySelectorAll(".fade-right-element");
+
+      document.addEventListener("DOMContentLoaded", function () {
+        fadeLeftElements.forEach(function (element) {
+          fadeIn(element);
+        });
+
+        fadeRightElements.forEach(function (element) {
+          fadeIn(element);
+        });
+      });
+
+      document.addEventListener("scroll", function () {
+        fadeLeftElements.forEach(function (element) {
+          fadeIn(element);
+        });
+
+        fadeRightElements.forEach(function (element) {
+          fadeIn(element);
+        });
+      });
+
       const idWhtHere = document.querySelector("#whtHere");
       const bdy = document.querySelector("body");
       const IdAbtUs = document.querySelector("#abtUs");
@@ -293,35 +310,84 @@
       const iconX = document.querySelector(".Xicon");
       const ClsBtn = document.querySelector(".CloseBtn");
 
-      idWhtHere.addEventListener("click", function () {
-        idWhtHere.setAttribute("href", "#");
-        whatsHere.style.transitionDelay = "0.6s";
-        whatsHere.classList.add("popin");
-        bdy.classList.add("noScroll");
-        whatsHereCon.style.opacity = "1";
-      });
+      function disableBodyScroll() {
+        document.body.style.overflow = "hidden";
+      }
 
-      IdAbtUs.addEventListener("click", function () {
-        IdAbtUs.setAttribute("href", "#");
-        aboutUs.style.transitionDelay = "0.6s";
-        aboutUs.classList.add("popin");
-        bdy.classList.add("noScroll");
-        aboutUsCon.style.opacity = "1";
-      });
+      function enableBodyScroll() {
+        document.body.style.overflowY = "scroll";
+      }
 
-      iconX.addEventListener("click", function () {
-        idWhtHere.removeAttribute("href");
-        whatsHere.style.transitionDelay = "0.1s";
-        whatsHere.classList.remove("popin");
-        bdy.classList.remove("noScroll");
-      });
+      function WhatsHere() {
+        // Gulir ke atas halaman dengan animasi
+        window.scrollTo({
+          top: 0,
+          behavior: "smooth",
+        });
 
-      ClsBtn.addEventListener("click", function () {
-        IdAbtUs.removeAttribute("href");
-        aboutUs.style.transitionDelay = "0.1s";
-        aboutUs.classList.remove("popin");
-        bdy.classList.remove("noScroll");
-      });
+        // Periksa posisi scroll setelah jeda 500ms
+        setTimeout(function () {
+          if (window.scrollY === 0) {
+            console.log("What's Here content show");
+            whatsHere.classList.add("popin");
+            disableBodyScroll();
+          }
+        }, 400);
+      }
+
+      function AboutUs() {
+        // Gulir ke atas halaman dengan animasi
+        window.scrollTo({
+          top: 0,
+          behavior: "smooth",
+        });
+
+        // Periksa posisi scroll setelah jeda 500ms
+        setTimeout(function () {
+          if (window.scrollY === 0) {
+            console.log("About Us content show");
+            aboutUs.classList.add("popin");
+            disableBodyScroll();
+          }
+        }, 400);
+      }
+
+      function ClosePopin() {
+        setTimeout(() => {
+          whatsHere.classList.remove("popin");
+          aboutUs.classList.remove("popin");
+        }, 150);
+        enableBodyScroll();
+      }
+
+      // idWhtHere.addEventListener("click", function () {
+      //   idWhtHere.setAttribute("href", "#");
+      //   whatsHere.style.transitionDelay = "0.6s";
+      //   whatsHere.classList.add("popin");
+      //   bdy.classList.add("noScroll");
+      //   whatsHereCon.style.opacity = "1";
+      // });
+
+      // IdAbtUs.addEventListener("click", function () {
+      //   IdAbtUs.setAttribute("href", "#");
+      //   aboutUs.style.transitionDelay = "0.6s";
+      //   aboutUs.classList.add("popin");
+      //   bdy.classList.add("noScroll");
+      //   aboutUsCon.style.opacity = "1";
+      // });
+
+      // iconX.addEventListener("click", function () {
+      //   idWhtHere.removeAttribute("href");
+      //   whatsHere.style.transitionDelay = "0.1s";
+      // });
+
+      // ClsBtn.addEventListener("click", function () {
+      //   IdAbtUs.removeAttribute("href");
+      //   aboutUs.style.transitionDelay = "0.1s";
+      //   aboutUs.classList.remove("popin");
+      //   bdy.classList.remove("noScroll");
+      //   enableBodyScroll();
+      // });
     </script>
   </body>
 </html>
