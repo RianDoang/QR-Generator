@@ -20,6 +20,9 @@
       crossorigin="anonymous"
     />
 
+    <!-- Aos -->
+    <link href="node_modules/aos/dist/aos.css" rel="stylesheet" />
+
     <link rel="stylesheet" href="style.css" />
     <link rel="icon" href="img/ppp.jpg" />
     <title>Home Page</title>
@@ -152,8 +155,21 @@
               <span></span>
             </div>
           </h5>
-          <h1>Make your QR Online (Beta)</h1>
-          <a href="#" id="whtHere">
+          <h1
+            data-aos="fade-right"
+            data-aos-duration="1000"
+            data-aos-delay="200"
+            data-aos-once="true"
+          >
+            Make your QR Online (Beta)
+          </h1>
+          <a
+            href="#"
+            id="whtHere"
+            data-aos="fade-right"
+            data-aos-delay="1000"
+            data-aos-once="true"
+          >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               height="12"
@@ -168,7 +184,13 @@
             </svg>
             What's here
           </a>
-          <a href="#" id="abtUs">
+          <a
+            href="#"
+            id="abtUs"
+            data-aos="fade-right"
+            data-aos-delay="1300"
+            data-aos-once="true"
+          >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               height="12"
@@ -183,7 +205,14 @@
             </svg>
             About Us
           </a>
-          <a href="qrcode - 1/index.html">
+          <a
+            href="qrcode - 1/index.html"
+            data-aos="fade-in"
+            data-aos-once="true"
+            data-aos-delay="1700"
+            data-aos-duration="2000"
+            data-aos-easing="ease"
+          >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="22"
@@ -219,13 +248,26 @@
           </a>
         </div>
         <div class="sideR">
-          <img src="img/QR Code-custom.png" alt="" />
+          <img
+            src="img/QR Code-custom.png"
+            alt=""
+            data-aos="fade-left"
+            data-aos-delay="600"
+            data-aos-duration="1000"
+            data-aos-once="true"
+          />
         </div>
       </div>
     </section>
 
-    <script src="date.js"></script>
+    <!-- <script src="date.js"></script> -->
+
+    <!-- Aos Js -->
+    <script src="node_modules/aos/dist/aos.js"></script>
+
     <script>
+      AOS.init();
+
       // Hamburger menu
       const hamburger = document.querySelector(".hamburger-menu");
       const navMenu = document.querySelector("nav ul");
@@ -275,7 +317,7 @@
         whatsHere.classList.remove("popin");
         bdy.classList.remove("noScroll");
       });
-      
+
       ClsBtn.addEventListener("click", function () {
         IdAbtUs.removeAttribute("href");
         aboutUs.style.transitionDelay = "0.1s";
