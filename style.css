@@ -485,6 +485,7 @@ nav ul li a:hover::after {
 .sideR img {
   width: 480px;
   object-fit: cover;
+  z-index: -1;
 }
 
 /* Mobile */
