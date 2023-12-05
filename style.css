@@ -488,6 +488,12 @@ nav ul li a:hover::after {
   z-index: -1;
 }
 
+.sideR img.fade-down {
+  /* transform: translate(0, -200px); */
+  opacity: 1;
+  background-color: red;
+}
+
 /* Mobile */
 @media screen and (max-width: 576px) {
   body {
