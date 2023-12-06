@@ -28,7 +28,7 @@ body {
   top: -150px;
   left: -170px;
   width: 100%;
-  height: 150vh;
+  height: 100%;
   filter: blur(80px);
   z-index: -1;
 }
@@ -214,7 +214,8 @@ nav ul li a:hover::after {
   padding-right: 10px;
 }
 
-.whtHr {
+.whtHr,
+.abtS {
   opacity: 0;
   backdrop-filter: blur(10px);
   position: absolute;
@@ -223,6 +224,9 @@ nav ul li a:hover::after {
   width: 100%;
   height: 100vh;
   transform: scale(0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
   z-index: -1;
 }
 
@@ -235,17 +239,17 @@ nav ul li a:hover::after {
   top: 0;
   left: 0;
   width: 100%;
-  height: 100vh;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   z-index: 1;
 }
 
 .whtHr .container,
 .abtS .container {
   background-color: #020617;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+
   width: 75%;
   height: 80%;
   border-radius: 5px;
@@ -330,18 +334,6 @@ nav ul li a:hover::after {
   font-size: 17px;
 }
 
-.abtS {
-  opacity: 0;
-  backdrop-filter: blur(10px);
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100vh;
-  transform: scale(0.8);
-  z-index: -1;
-}
-
 .sideL a:nth-child(5) {
   background-color: #06b6d4;
   display: flex;
@@ -422,6 +414,72 @@ nav ul li a:hover::after {
 .fade-right-element.fade {
   opacity: 1;
   transform: translateX(0);
+}
+
+.loadingPage {
+  backdrop-filter: blur(3px);
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: none;
+  align-items: center;
+  justify-content: center;
+}
+
+.loadingPage.showLoading {
+  backdrop-filter: blur(3px);
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.loader,
+.loader:before,
+.loader:after {
+  border-radius: 50%;
+  width: 2.5em;
+  height: 2.5em;
+  animation-fill-mode: both;
+  animation: bblFadInOut 1.8s infinite ease-in-out;
+}
+.loader {
+  color: #fff;
+  font-size: 7px;
+  position: relative;
+  text-indent: -9999em;
+  transform: translateZ(0);
+  animation-delay: -0.16s;
+}
+.loader:before,
+.loader:after {
+  content: "";
+  position: absolute;
+  top: 0;
+}
+.loader:before {
+  left: -3.5em;
+  animation-delay: -0.32s;
+}
+.loader:after {
+  left: 3.5em;
+}
+
+@keyframes bblFadInOut {
+  0%,
+  80%,
+  100% {
+    box-shadow: 0 2.5em 0 -1.3em;
+  }
+  40% {
+    box-shadow: 0 2.5em 0 0;
+  }
 }
 
 /* Mobile */

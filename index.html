@@ -245,6 +245,10 @@
       </div>
     </section>
 
+    <div class="loadingPage">
+      <span class="loader"></span>
+    </div>
+
     <script>
       // Hamburger menu
       const hamburger = document.querySelector(".hamburger-menu");
@@ -304,11 +308,14 @@
       const bdy = document.querySelector("body");
       const IdAbtUs = document.querySelector("#abtUs");
       const whatsHere = document.querySelector(".whtHr");
-      whatsHereCon = document.querySelector(".whtHr .container");
+      const whatsHereCon = document.querySelector(".whtHr .container");
       const aboutUs = document.querySelector(".abtS");
-      aboutUsCon = document.querySelector(".abtS .container");
+      const aboutUsCon = document.querySelector(".abtS .container");
       const iconX = document.querySelector(".Xicon");
       const ClsBtn = document.querySelector(".CloseBtn");
+      const loadingPage = document.querySelector(".loadingPage");
+      // Mendeteksi apakah perangkat adalah desktop atau mobile
+      const isMobile = window.innerWidth <= 768; // Ubah batas sesuai dengan kebutuhan Anda
 
       function disableBodyScroll() {
         document.body.style.overflow = "hidden";
@@ -324,15 +331,17 @@
           top: 0,
           behavior: "smooth",
         });
-
+        loadingPage.classList.add("showLoading");
+        disableBodyScroll();
         // Periksa posisi scroll setelah jeda 500ms
         setTimeout(function () {
           if (window.scrollY === 0) {
             console.log("What's Here content show");
             whatsHere.classList.add("popin");
+            loadingPage.classList.remove("showLoading");
             disableBodyScroll();
           }
-        }, 500);
+        }, 1000);
       }
 
       function AboutUs() {
@@ -341,23 +350,31 @@
           top: 0,
           behavior: "smooth",
         });
-
+        loadingPage.classList.add("showLoading");
+        disableBodyScroll();
         // Periksa posisi scroll setelah jeda 500ms
         setTimeout(function () {
           if (window.scrollY === 0) {
             console.log("About Us content show");
+            loadingPage.classList.remove("showLoading");
             aboutUs.classList.add("popin");
             disableBodyScroll();
           }
-        }, 500);
+        }, 1000);
       }
 
       function ClosePopin() {
         setTimeout(() => {
           whatsHere.classList.remove("popin");
           aboutUs.classList.remove("popin");
-        }, 200);
-        enableBodyScroll();
+        }, 100);
+
+        // Mengatur overflow berdasarkan tipe perangkat
+        if (isMobile) {
+          bdy.style.overflowY = "auto"; // Untuk perangkat mobile
+        } else {
+          bdy.style.overflow = "hidden"; // Untuk desktop
+        }
       }
 
       // idWhtHere.addEventListener("click", function () {
