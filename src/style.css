@@ -264,7 +264,7 @@ nav ul li a:hover::after {
 
 .whtHr .container div:nth-child(1),
 .abtS .container div:nth-child(1) {
-  padding: 15px 0;
+  padding: 15px 0 8px 0;
   width: 100%;
   display: flex;
   align-items: center;
@@ -392,7 +392,7 @@ nav ul li a:hover::after {
   width: 480px;
   object-fit: cover;
   z-index: -1;
-  filter: drop-shadow(0px 0px 20px rgba(0, 0, 0, 0.5)); 
+  filter: drop-shadow(0px 0px 20px rgba(0, 0, 0, 0.5));
 }
 
 .fade-left-element {
@@ -490,6 +490,18 @@ nav ul li a:hover::after {
   body {
     overflow-y: auto;
     height: 100vh;
+  }
+
+  nav ul li a::after {
+    content: "";
+    display: block;
+    margin-top: 5px;
+    border-bottom: 2px solid #ffffff;
+    border-radius: 5px;
+    width: 100%;
+    transition: 0.2s linear;
+    transform: scaleX(0);
+    transform-origin: left;
   }
 
   .bgShape {
